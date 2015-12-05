@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Game</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<link rel="stylesheet" type="text/css" href="../css/college.css">
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+		<script type="text/javascript">
+			//This deal with the site music
+			var boolSound;
+			var audio = new Audio('../miscFiles/siteMusic.mp3');
+			function MusicPlay(){
+				audio.play();
+			}
+			//boolSound = 1, sound off. boolSound = 0, sound on
+			function SoundToggle(){
+				if(1==boolSound){
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOn');
+					boolSound = 0;
+					audio.play();
+					//start the sound
+				}else{
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOff');
+					boolSound = 1;
+					audio.pause();
+					//end the sound
+				}
+			}
+
+			//The video appearing
+			function Video(){
+				whiteBack.classList.add('whiteBackVisible');
+				video.classList.add('videoVisible');
+			}
+			function NormalBack(){
+				whiteBack.classList.remove('whiteBackVisible');
+				video.classList.remove('videoVisible');
+			}
+
+
+
+
+			var state = 0;
+			var myVar
+			function RotateTimer(){
+				myVar = setInterval(CycleText, 20000);
+			}
+			function CycleText(){
+				switch(state){
+					case 0:
+						text0.classList.add('hideText');
+						text1.classList.remove('hideText');
+						state=1;
+						break;
+					case 1:
+						text1.classList.add('hideText');
+						text2.classList.remove('hideText');
+						state=2;
+						break;
+					case 2:
+						text2.classList.add('hideText');
+						text3.classList.remove('hideText');
+						state=3;
+						break;
+					case 3:
+						text3.classList.add('hideText');
+						text0.classList.remove('hideText');
+						state=0;
+						break;
+				}
+			}
+		</script>
+	</head>
+	<body onload="RotateTimer()">
+		<div id="whiteBack" onclick="NormalBack()"/></div>
+		<div class="videoHolder">
+			<iframe id="video" src="https://www.youtube.com/embed/CYVlB6SmscQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+
+		<div id="mainBody">
+			<div id="teamTitle">
+				<img class="spaceCadetsLogo" src="../Images/spacecadets.png" alt="Space Cadets" />
+				<img class="marianopolisLogo" src="../Images/mrobotics.png" alt="Marianopolis College" />
+			</div>
+			<div id="relative">
+				<div class='topRight'>
+					<div class='widget'>
+						<div class='bar speed'>speed</div>
+						<div class='bar drag'></div>
+						<div class='bar damage'>damage</div>
+					</div>
+				</div>
+				<div src="../Images/blueBox.png" class="tronBox" id="sideImage">
+					<p onclick="CycleText()" class="clickMe">Cadet's Experiences</p>
+					<p id="text0" class="">Preparing for the competition was not easy. I was used to the long days and the workload from my previous robotics experiences. It was always a struggle, waking up every morning and going to school during holiday, but the difficult problems kept everyday interesting and exciting! Even though it was hard sometimes I always looked forward to coming in to get work done. I worked on the computer most of the time, overcoming bugs and struggling to meet deadlines. The team had a lot of trouble identifying a final theme, and that made everything a mess. We sorted that out eventually but it set us all back. I had to sacrifice several nights to get everything done. The team kept me up and motivated to keep going until everything was done.
+						-Aidan Sullivan
+					</p>
+					<p id="text1" class="hideText">As a first year robotics team member, I had really no idea what to expect. I was previously interested in digital graphics and arts, but I never thought it could be of any use for building a robot. Recalling the first official work day, when we were assigned different tasks, I realized that the competition had so many more components that I imagined. I really enjoyed designing the website and drawing the sketches for each and every page of it. The hardest part was balancing the heavy academic schedule with a workload of Photoshop-based tasks. I really had to give up on several nights of sleep to meet the deadlines. The team always supported me and helped me in any way possible. It truly an empowering experience.
+						-Kaitlin Zhang
+					</p>
+					<p id="text2" class="hideText">During my experience on the team, I learned to rapidly work with people that I never talked to before and they taught me lots of new techniques and vocabulary which is useful for the future like painting, common tools, electrical. I loved how after a few days of work, we quickly become a coordinated team. Although, we all sacrificed a lot of the winter break and spent time after school till very late and solving all kind of problems, robotics will always be a unforgettable experience.
+						- Eric Yu
+					</p>
+					<p id="text3" class="hideText">This year was very challenging for the Marianopolis Robotics Team. Being the co-captain of a team is always stressful, mostly when there are so many expectations. Our team had so many great ideas for Actimania that at times it was very hard to make decision, mostly concerning the robot design. However, we learnt to exploit the many talents of each and every one of us to reach our goals. We all gave up countless hours of sleep but in the end we do it for one reason, our common passion for robotics and our desire to excel.
+						-Ferly Galvez
+					</p>
+
+				</div>
+				<div class="tronBox" id="bottomRight">
+					<iframe class="earthFrame" src="../en/earth.html"></iframe>
+				</div>
+			</div>
+
+
+			<div id="content">
+				<div class="headerInsideContent"></div>
+                <div class="contentInContent noFooter" >
+					<div id="contentHolderMargin">
+						<div id="contentHolder">
+							<div class="mainContent top border"></div>
+							<div class="mainContent bot border"></div>
+
+							<div class="keepingPadding">
+								<div class="hoveringContentText">
+									<div class="shape"></div>
+									<div class="teamCenter">
+                                      <p class="contentText collegeText">Marianopolis College is an English-language private CEGEP currently located in Westmount, Quebec, Canada, and is one of the smallest Anglophone colleges of the province, giving students the personal attention they need to succeed.</p>
+                                      <img class="contentImage" src="https://c4.staticflickr.com/8/7394/16435577172_54ebaeea9f_k.jpg">
+                                      <p class="contentText collegeText">Recognized as one of Quebec's top pre-university colleges, Marianopolis College boasts a diverse student body comprised of 2,000 students from over 175 public and private high schools, English and French, from Quebec and abroad.</p>
+                                      <p class="contentText collegeText">From early admission to Harvard University to direct entry to McGill University's Faculty of Law, Marianopolis College's students gain entry to the world's top universities every year.</p>
+                                      <p class="contentText collegeText">It is also the only college in Quebec that offers five distinct special certificates, which allow students to touch upon other interests outside their curriculum: Environmental Studies, International Studies, Law and Social Justice, Native Studies and Third World Studies. </p>
+
+                                      <img class="contentImage" src="">
+                                      <h2 class="contentText">Student Life</h2>
+
+                                      <p class="contentText collegeText">Student life at Marianopolis is supported by Congress, the student government, which organizes a variety of events and activities such as Halloween, Christmas, Earth Week, Valentine's Day, etc. The College has currently up to 100 student clubs and several athletic teams involved in competitive sports such as volleyball, badminton, dragon boat, etc. Marianopolis also offers a gymnasium and fitness center for students during the week. </p>
+                                      <p class="contentText collegeText">Marianopolis is also the only college to hold a universal lunch break, called Activity Period, twice a week. This common break is an opportunity for students to hear from world-renowned guest speakers, play intramural sports, participate in clubs activities and socialize with peers outside of class. </p>
+                                      <p class="contentText collegeText">Students also have the opportunity to get involved in a variety of enriching extracurricular activities, from the annual ArtsFest and the Christmas Fair Trade Bazaar, to creative writing, math and robotics competitions.</p>
+                                      <img class="contentImage" src="https://c1.staticflickr.com/9/8644/16436493165_bf24b5ff1b_c.jpg">
+
+                                      <h2 class="contentText">Why Marianopolis?</h2>
+                                      <p class="contentText collegeText">Marianopolis is the place for motivated young people to achieve, grow and succeed. As Quebec's only English-language private college, Marianopolis has been uniquely positioned for more than a century to offer unparalleled support to students from various backgrounds. The college also provides exceptional resources and services to students in the classroom and beyond to guarantee a most empowering academic experience. At Marianopolis, students are challenged and prepared to take on the final step, university. </p>
+                                      <div class="sitemap icon marianopolis"><a href="">Marianopolis</a></div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="sitemapHolder">
+				<div class="tronBox" id="topPart">
+					  <div class="sitemap icon"><a href="index1.html">Home</a></div>
+					  <div class="sitemap icon"><a href="robot.html">Robot</a></div>
+					  <div class="sitemap icon"><a href="game.html">Game</a></div>
+					  <div class="sitemap icon"><a href="team.html">Team</a></div>
+					  <div class="sitemap icon"><a href="#" onclick="Video()">Documentary</a></div>
+					  <div class="sitemap icon"><a href="journal.html">Mission Log</a></div>
+				</div>
+				<div class="socialMedia" >
+					<div class="sitemap icon"><a href="../fr/college.html">Fran&ccedil;ais</a></div>
+					<div class="sitemap icon"><a href="college.html">College</a></div>
+					<div class="sitemap">
+						<div id="soundImage" onclick="SoundToggle()" class="soundIcon soundOff"></div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img width="50px" height="50px" src="../Images/facebook.png" alt="facebook" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://twitter.com/MariRobotics" ><img width="50px" height="50px" src="../Images/twitter.png" alt="twitter" /></a>
+							<div class="iconFiller"></div>
+						</div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img width="50px" height="50px" src="../Images/instagram.png" alt="instagram" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img width="50px" height="50px" src="../Images/youtube.png" alt="youtube" /></a>
+							<div class="iconFiller"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+    <script type="text/javascript" src="../js/objloader.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ship.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '3'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '3'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '3'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '3'
+          }}, function() {
+          // Finish callback
+        });
+      });
+</html>

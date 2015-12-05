@@ -1,0 +1,26 @@
+.contentInContent {
+  height: 70%;
+}
+
+#contentHolderMargin {
+  height: 70%;
+}
+
+#insideFooter {
+  height: 20%;
+}
+
+.sitemap.icon.tutorial {
+  height: 40px;
+  width: 80px;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  font-size: 1em;
+}
+
+.sandy {
+  top: 0;
+  right: 0;
+  position: absolute;
+}

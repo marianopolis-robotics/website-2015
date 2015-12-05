@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Home</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+		<script type="text/javascript">
+			var boolSound;
+			var audio = new Audio('../miscFiles/siteMusic.mp3');
+			function SoundToggle(){
+				if(0==boolSound){
+					soundImage.classList.add('soundOn');
+					soundImage.classList.remove('soundOff');
+					boolSound = 1;
+					audio.play();
+				}else{
+					soundImage.classList.add('soundOff');
+					soundImage.classList.remove('soundOn');
+					boolSound = 0;
+					audio.pause();
+				}
+			}
+			</script>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+	</head>
+	<body>
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img src="../Images/spacecadets.png" alt="Space Cadets" width="100%"/>
+            </div>
+			<div id="relative">
+                <div class='topRight'>
+                  <a href="#"><div id="langTab" class="icon">Fran&ccedil;ais</div></a>
+                </div>
+				<div src="../Images/blueBox.png" id="sideImage"></div>
+				<div src="../Images/white.png" id="socialMedia"></div>
+			</div>
+
+			<div id="content">
+				<div class="headerInsideContent"></div>	<!--pretty much a margin-->
+				<div class="contentInContent" >
+					<div id="contentHolderMargin">
+						<div id="contentHolder">
+						</div>
+					</div>
+
+					<div id="insideFooter">
+
+					</div>
+                </div>
+			</div>
+			<div id="sitemapHolder">
+                <div class="iconHolder">
+                  <a href="index1.html"><div class="sitemap icon">Home</div></a>
+                  <a href="robot.html"><div class="sitemap icon">Robot</div></a>
+                  <a href="game.html"><div class="sitemap icon">Game</div></a>
+                  <a href="team.html"><div class="sitemap icon">Team</div></a>
+                  <a href="video.html"><div class="sitemap icon">Documentary</div></a>
+                  <a href="journal.html"><div class="sitemap icon">Mission Log</div></a>
+                  <a href="college.html"><div class="sitemap icon">College</div></a>
+                </div>
+				
+				<div class="socialMedia">
+					<a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img src="../Images/fb.png" alt="facebook" /></a>
+					<a class='socialIcon' href="https://twitter.com/MariRobotics" ><img src="../Images/twitter.png" alt="twitter" /></a>
+					<a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img src="../Images/instagram.png" alt="instagram" /></a>
+					<a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img src="../Images/youtube.png" alt="youtube" /></a>
+					<div onclick='SoundToggle()' id="soundImage" class="soundOn"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

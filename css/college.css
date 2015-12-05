@@ -1,0 +1,13 @@
+.contentImage {
+  width: 100%;
+}
+
+.sitemap.icon.marianopolis {
+  height: 40px;
+  width: 200px;
+  position: relative;
+  bottom: 20px;
+  right: 0;
+  font-size: 200%;
+  line-height: 1.8;
+}

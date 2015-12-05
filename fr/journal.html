@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Home</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<link rel="stylesheet" type="text/css" href="../css/journal.css">
+		<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+        <script type="text/javascript">
+			//The video appearing
+			function Video(){
+				whiteBack.classList.add('whiteBackVisible');
+				video.classList.add('videoVisible');
+			}
+			function NormalBack(){
+				whiteBack.classList.remove('whiteBackVisible');
+				video.classList.remove('videoVisible');
+			}
+        </script>
+	</head>
+	<body onload="aMusicPlay()">
+		<div id="whiteBack" onclick="NormalBack()"/></div>
+		<div class="videoHolder">
+            <iframe id="video" src="https://www.youtube.com/embed/CYVlB6SmscQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img class="spaceCadetsLogo" src="../Images/spacecadets.png" alt="Space Cadets" />
+              <img class="marianopolisLogo" src="../Images/mrobotics.png" alt="Marianopolis College" />
+            </div>
+			<div id="relative">
+                <div class='topRight'>
+                  <div class='widget'>
+                    <div class='bar speed'>speed</div>
+                    <div class='bar drag'></div>
+                    <div class='bar damage'>damage</div>
+                  </div>
+                </div>
+				<div class="tronBox" id="sideImage">
+                  <div class="keepingPadding panoramaContainer">
+                    <div class="insidePanorama">
+                      <img class="firstPanorama panorama" src="http://c4.staticflickr.com/8/7424/15809319173_3b9475ada5_k.jpg" />
+                      <img class="secondPanorama panorama" src="http://c4.staticflickr.com/8/7424/15809319173_3b9475ada5_k.jpg" />
+                    </div>
+                  </div>
+                </div>
+				<div class="tronBox" id="bottomRight">
+                  <iframe class="earthFrame" src="../en/earth.html"></iframe>
+                </div>
+			</div>
+
+			<div id="content">
+				<div class="headerInsideContent">
+				</div>
+                <div class="contentInContent" >
+                  <div id="contentHolderMargin">
+                    <div id="contentHolder">
+                        <div class="mainContent top border"></div>
+                        <div class="mainContent bot border"></div>
+
+                        <div class="keepingPadding">
+                          <div class="hoveringContentText">
+                            <div class="shape"></div>
+                            <div class="imageSliderContainer">
+                              <iframe class="imageSlider" src="./image_slider.html"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+                </div>
+			</div>
+			<div id="sitemapHolder">
+                <div class="tronBox" id="topPart">
+                  <div class="sitemap icon"><a href="index1.html">Accueil</a></div>
+                  <div class="sitemap icon"><a href="robot.html">Robot</a></div>
+                  <div class="sitemap icon"><a href="game.html">Jeu</a></div>
+                  <div class="sitemap icon"><a href="team.html">&#201;quipe</a></div>
+                  <div class="sitemap icon"><a href="#" onclick="Video()">Documentaire</a></div>
+                  <div class="sitemap icon"><a href="journal.html">Journal</a></div>
+                </div>
+                <br/> <!-- temporary -->
+                <div class="socialMedia" >
+                  <div class="sitemap icon"><a href="../en/journal.html">English</a></div>
+                  <div class="sitemap icon"><a href="college.html">Coll&#232;ge</a></div>
+                  <div class="sitemap">
+					<div id="soundImage" onclick="SoundToggle()" class="soundIcon soundOff"></div>
+                    <div class="bunch">
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img width="50px" height="50px" src="../Images/facebook.png" alt="facebook" /></a>
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="https://twitter.com/MariRobotics" ><img width="50px" height="50px" src="../Images/twitter.png" alt="twitter" /></a>
+                      <div class="iconFiller"></div>
+                    </div>
+                    <div class="bunch">
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img width="50px" height="50px" src="../Images/instagram.png" alt="instagram" /></a>
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img width="50px" height="50px" src="../Images/youtube.png" alt="youtube" /></a>
+                      <div class="iconFiller"></div>
+                    </div>
+                  </div>
+                </div>
+			</div>
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+    <script type="text/javascript" src="../js/objloader.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ship.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '3'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '3'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '3'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '3'
+          }}, function() {
+          // Finish callback
+        });
+      });
+
+      //This deal with the site music
+      var boolSound;
+      var audio = new Audio('../miscFiles/siteMusic.mp3');
+      function MusicPlay(){
+          audio.play();
+      }
+      //boolSound = 1, sound off. boolSound = 0, sound on
+      function SoundToggle(){
+          if(1==boolSound){
+              soundImage.classList.remove('soundOn');
+              soundImage.classList.remove('soundOff');
+              soundImage.classList.add('soundOn');
+              boolSound = 0;
+              audio.play();
+              //start the sound
+          }else{
+              soundImage.classList.remove('soundOn');
+              soundImage.classList.remove('soundOff');
+              soundImage.classList.add('soundOff');
+              boolSound = 1;
+              audio.pause();
+              //end the sound
+          }
+      }
+
+      //The video appearing
+      function Video(){
+          whiteBack.classList.add('whiteBackVisible');
+          video.classList.add('videoVisible');
+      }
+      function NormalBack(){
+          whiteBack.classList.remove('whiteBackVisible');
+          video.classList.remove('videoVisible');
+      }
+    </script>
+
+</html>

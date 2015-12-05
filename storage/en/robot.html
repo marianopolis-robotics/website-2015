@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Robot</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+		<script type="text/javascript">
+			var boolSound;
+			var audio = new Audio('../miscFiles/siteMusic.mp3');
+			function SoundToggle(){
+				if(0==boolSound){
+					soundImage.classList.add('soundOn');
+					soundImage.classList.remove('soundOff');
+					boolSound = 1;
+					audio.play();
+				}else{
+					soundImage.classList.add('soundOff');
+					soundImage.classList.remove('soundOn');
+					boolSound = 0;
+					audio.pause();
+				}
+			}
+			
+			var enlarged = 0;
+			function Enlarge(imgID){
+				if(enlarged==0){
+					galleryOverflow.classList.add('galleryOverflowCancel');
+				
+					img0.classList.remove('galleryThumb');
+					img0.classList.add('galleryFull');	
+					img1.classList.remove('galleryThumb');
+					img1.classList.add('galleryFull');	
+					img2.classList.remove('galleryThumb');
+					img2.classList.add('galleryFull');	
+					img3.classList.remove('galleryThumb');
+					img3.classList.add('galleryFull');	
+					img4.classList.remove('galleryThumb');
+					img4.classList.add('galleryFull');	
+					
+					enlarged=1;
+					switch (imgID){
+						case 0:
+							img0.classList.add('galleryVisible');
+							break;
+						case 1:
+							img1.classList.add('galleryVisible');
+							break;
+						case 2:
+							img2.classList.add('galleryVisible');
+							break;
+						case 3:
+							img3.classList.add('galleryVisible');
+							break;
+						case 4:
+							img4.classList.add('galleryVisible');
+							break;
+					}
+				}else{
+					enlarged=0;
+					galleryOverflow.classList.remove('galleryOverflowCancel');
+					
+					img0.classList.add('galleryThumb');
+					img0.classList.remove('galleryFull');
+					img0.classList.remove('galleryVisible');
+					img1.classList.add('galleryThumb');
+					img1.classList.remove('galleryFull');
+					img1.classList.remove('galleryVisible');
+					img2.classList.add('galleryThumb');
+					img2.classList.remove('galleryFull');
+					img2.classList.remove('galleryVisible');
+					img3.classList.add('galleryThumb');
+					img3.classList.remove('galleryFull');
+					img3.classList.remove('galleryVisible');
+					img4.classList.add('galleryThumb');
+					img4.classList.remove('galleryFull');
+					img4.classList.remove('galleryVisible');
+				}
+			}
+			
+		</script>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+	</head>
+	<body>
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img src="../Images/spacecadets.png" alt="Space Cadets" width="100%"/>
+            </div>
+			<div id="relative">
+                <div class='topRight'>
+                  <a href="#"><div id="langTab" class="icon">Fran&ccedil;ais</div></a>
+                </div>
+				<div src="../Images/blueBox.png" id="sideImage"></div>
+				<div src="../Images/white.png" id="socialMedia"></div>
+			</div>
+
+			<div id="content">
+				<div class="headerInsideContent"></div>	<!--pretty much a margin-->
+				<div class="contentInContent" >
+					<div id="contentHolderMargin">
+						<div id="contentHolder">
+							<h1 class="contentText">Sandy</h1>
+							<h2 class="contentText">Design</h2>
+							<h3 class="contentText">CHASSIS AND BODY</h3>
+							<p class="contentText">Frame: 1"x1" Aluminum 80-20 extrusion and 1-1/4x1-1/4" aluminum square tubing with 1/8" wall thickness</p>
+							<p class="contentText">Wheels: 4 x Grey AndyMark 6" Wheels</p>
+							<h3 class="contentText">MAJOR COMPONENTS</h3>
+							<p class="contentText">Motors: 2 x BaneBots motors with 20:1 ratio on a 3.5:1 chain reduction
+							2 x Black window lift motors
+							2 x Makita power drills</p>
+							<p class="contentText">Batteries: 7.2V VEX batteries
+							2 x 12V Drill batteries </p>
+
+							<h3 class="contentText">LOGISTICS</h3>
+							<p class="contentText">Main Processor: VEX Cortex Microcontroller</p>
+							<p class="contentText">Program: RobotC</p>
+							<p class="contentText">Controller: VEXnet Joystick</p>
+
+						</div>
+					</div>
+
+					<div id="insideFooter">
+						<h2 class='footerText'>Gallery</h2>
+						<div id='galleryOverflow'>
+							<!--<div class="galleryHolder">-->
+								<img onclick="Enlarge(0);" id='img0' class="galleryThumb" src="../Images/red.png"/>
+								<img onclick="Enlarge(1);" id='img1' class="galleryThumb" src="../Images/red.png"/>
+								<img onclick="Enlarge(2);" id='img2' class="galleryThumb" src="../Images/red.png"/>
+								<img onclick="Enlarge(3);" id='img3' class="galleryThumb" src="../Images/red.png"/>
+								<img onclick="Enlarge(4);" id='img4' class="galleryThumb" src="../Images/red.png"/>
+							<!--</div><!---->
+						</div>
+					</div>
+                </div>
+			</div>
+			<div id="sitemapHolder">
+                <div class="iconHolder">
+                  <a href="index1.html"><div class="sitemap icon">Home</div></a>
+                  <a href="robot.html"><div class="sitemap icon">Robot</div></a>
+                  <a href="game.html"><div class="sitemap icon">Game</div></a>
+                  <a href="team.html"><div class="sitemap icon">Team</div></a>
+                  <a href="video.html"><div class="sitemap icon">Documentary</div></a>
+                  <a href="journal.html"><div class="sitemap icon">Mission Log</div></a>
+                  <a href="college.html"><div class="sitemap icon">College</div></a>
+                </div>
+				
+				<div class="socialMedia">
+					<a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img src="../Images/fb.png" alt="facebook" /></a>
+					<a class='socialIcon' href="https://twitter.com/MariRobotics" ><img src="../Images/twitter.png" alt="twitter" /></a>
+					<a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img src="../Images/instagram.png" alt="instagram" /></a>
+					<a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img src="../Images/youtube.png" alt="youtube" /></a>
+					<div onclick='SoundToggle()' id="soundImage" class="soundOn"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Home</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+        <script type="text/javascript">
+			//The video appearing
+			function Video(){
+				whiteBack.classList.add('whiteBackVisible');
+				video.classList.add('videoVisible');
+			}
+			function NormalBack(){
+				whiteBack.classList.remove('whiteBackVisible');
+				video.classList.remove('videoVisible');
+			}
+        </script>
+	</head>
+	<body onload="aMusicPlay()">
+		<div id="whiteBack" onclick="NormalBack()"/></div>
+		<div class="videoHolder">
+            <iframe id="video" src="https://www.youtube.com/embed/CYVlB6SmscQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img class="spaceCadetsLogo" src="../Images/spacecadets.png" alt="Space Cadets" />
+              <img class="marianopolisLogo" src="../Images/mrobotics.png" alt="Marianopolis College" />
+            </div>
+			<div id="relative">
+                <div class='topRight'>
+                  <div class='widget'>
+                    <div class='bar speed'>speed</div>
+                    <div class='bar drag'>space drag</div>
+                    <div class='bar damage'>damage</div>
+                  </div>
+                </div>
+				<div class="tronBox" id="sideImage">
+                  <div class="keepingPadding panoramaContainer">
+                    <div class="insidePanorama">
+                      <img class="firstPanorama panorama" src="http://c4.staticflickr.com/8/7424/15809319173_3b9475ada5_k.jpg" />
+                      <img class="secondPanorama panorama" src="https://c4.staticflickr.com/8/7328/16430101402_202958ff34_k.jpg" />
+                    </div>
+                  </div>
+                </div>
+				<div class="tronBox" id="bottomRight">
+                  <iframe class="earthFrame" src="../en/earth.html"></iframe>
+                </div>
+			</div>
+
+			<div id="content">
+				<div class="headerInsideContent">
+				</div>
+                <div class="contentInContent" >
+                  <div id="contentHolderMargin">
+                    <div id="contentHolder">
+                        <div class="mainContent top border"></div>
+                        <div class="mainContent bot border"></div>
+
+                        <div class="keepingPadding">
+                          <div class="hoveringContentText">
+                            <div class="shape"></div>
+                            <p class="contentText">Welcome to the website documenting Marianopolis&#39; Mission to Earth. </p>
+                            <p class="contentText">I am Dr. Nefario and I have led the select students of intergalactic Marianopolis throughout the past three months. Our mission is to travel to Earth and explore the unknowns of a nuclearly destroyed planet. </p>
+                            <p class="contentText">To prepare for this mission, the Cadets have designed and built a robot to explore areas toxic to humans, filmed a documentary that will be updated throughout the mission and a website to inform people like you about our efforts and built their very own space pod to travel in.</p>
+                            <p class="contentText">Please take your time while browsing this website and keep in mind the hard work the Cadets put into this mission.</p>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div id="insideFooter">
+                      <div class='mesh'></div>
+                      <div class='shipTitleContainer'>
+                        <div class='shipTitleRelative'>
+                          <div class='shipTitle'>
+                            U.S.S VOYAGEUR
+                          </div>
+                        </div>
+                      </div>
+                      <div class='clock'>
+                        <div class="arrival">
+                          Time Until Arrival:
+                        </div>
+                        <div class="countdown countdown-container container">
+                            <div class="clock row">
+                                <div class="clock-item clock-days countdown-time-value ">
+                                    <div class="wrap">
+                                        <div class="inner">
+                                            <div id="canvas-days" class="clock-canvas"></div>
+
+                                            <div class="text">
+                                                <p class="val">0</p>
+                                                <p class="type-days type-time">DAYS</p>
+                                            </div><!-- /.text -->
+                                        </div><!-- /.inner -->
+                                    </div><!-- /.wrap -->
+                                </div><!-- /.clock-item -->
+
+                                <div class="clock-item clock-hours countdown-time-value ">
+                                    <div class="wrap">
+                                        <div class="inner">
+                                            <div id="canvas-hours" class="clock-canvas"></div>
+
+                                            <div class="text">
+                                                <p class="val">0</p>
+                                                <p class="type-hours type-time">HOURS</p>
+                                            </div><!-- /.text -->
+                                        </div><!-- /.inner -->
+                                    </div><!-- /.wrap -->
+                                </div><!-- /.clock-item -->
+
+                                <div class="clock-item clock-minutes countdown-time-value ">
+                                    <div class="wrap">
+                                        <div class="inner">
+                                            <div id="canvas-minutes" class="clock-canvas"></div>
+
+                                            <div class="text">
+                                                <p class="val">0</p>
+                                                <p class="type-minutes type-time">MINUTES</p>
+                                            </div><!-- /.text -->
+                                        </div><!-- /.inner -->
+                                    </div><!-- /.wrap -->
+                                </div><!-- /.clock-item -->
+
+                                <div class="clock-item clock-seconds countdown-time-value">
+                                    <div class="wrap">
+                                        <div class="inner">
+                                            <div id="canvas-seconds" class="clock-canvas"></div>
+
+                                            <div class="text">
+                                                <p class="val">0</p>
+                                                <p class="type-seconds type-time">SECONDS</p>
+                                            </div><!-- /.text -->
+                                        </div><!-- /.inner -->
+                                    </div><!-- /.wrap -->
+                                </div><!-- /.clock-item -->
+                            </div><!-- /.clock -->
+                        </div><!-- /.countdown-wrapper -->
+                      </div>
+                  </div>
+                </div>
+			</div>
+			<div id="sitemapHolder">
+                <div class="sitemapFiller"></div>
+                <div class="tronBox" id="topPart">
+                  <div class="sitemap icon"><a href="index1.html">Home</a></div>
+                  <div class="sitemap icon"><a href="robot.html">Robot</a></div>
+                  <div class="sitemap icon"><a href="game.html">Game</a></div>
+                  <div class="sitemap icon"><a href="team.html">Team</a></div>
+                  <div class="sitemap icon"><a href="#" onclick="Video()">Documentary</a></div>
+                  <div class="sitemap icon"><a href="journal.html">Mission Log</a></div>
+                </div>
+                <div class="sitemapFiller"></div>
+                <div class="socialMedia" >
+                  <div class="sitemap icon"><a href="../fr/index1.html">Fran&ccedil;ais</a></div>
+                  <div class="sitemap icon"><a href="college.html">College</a></div>
+                  <div class="sitemap">
+					<div id="soundImage" onclick="SoundToggle()" class="soundIcon soundOff"></div>
+                    <div class="bunch">
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img width="50px" height="50px" src="../Images/facebook.png" alt="facebook" /></a>
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="https://twitter.com/MariRobotics" ><img width="50px" height="50px" src="../Images/twitter.png" alt="twitter" /></a>
+                      <div class="iconFiller"></div>
+                    </div>
+                    <div class="bunch">
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img width="50px" height="50px" src="../Images/instagram.png" alt="instagram" /></a>
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img width="50px" height="50px" src="../Images/youtube.png" alt="youtube" /></a>
+                      <div class="iconFiller"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sitemapFiller"></div>
+			</div>
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+    <script type="text/javascript" src="../js/objloader.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ship.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '3'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '3'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '3'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '3'
+          }}, function() {
+          // Finish callback
+        });
+      });
+
+      //This deal with the site music
+      var boolSound;
+      var audio = new Audio('../miscFiles/siteMusic.mp3');
+      function MusicPlay(){
+          audio.play();
+      }
+      //boolSound = 1, sound off. boolSound = 0, sound on
+      function SoundToggle(){
+          if(1==boolSound){
+              soundImage.classList.remove('soundOn');
+              soundImage.classList.remove('soundOff');
+              soundImage.classList.add('soundOn');
+              boolSound = 0;
+              audio.play();
+              //start the sound
+          }else{
+              soundImage.classList.remove('soundOn');
+              soundImage.classList.remove('soundOff');
+              soundImage.classList.add('soundOff');
+              boolSound = 1;
+              audio.pause();
+              //end the sound
+          }
+      }
+
+      //The video appearing
+      function Video(){
+          whiteBack.classList.add('whiteBackVisible');
+          video.classList.add('videoVisible');
+      }
+      function NormalBack(){
+          whiteBack.classList.remove('whiteBackVisible');
+          video.classList.remove('videoVisible');
+      }
+    </script>
+
+</html>

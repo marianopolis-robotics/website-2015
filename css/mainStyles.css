@@ -1,0 +1,293 @@
+/*This is the main site css*/
+#mainHeader{
+	clear:both;
+	width:100%;
+}
+.centering{	
+	display:block;
+	margin:0px auto;
+	margin-top:2%;
+	position:relative;
+	width:90%
+}
+#greenBox{
+	float:left;
+	height:179px;
+	width:179px;
+}
+#blackBox{
+	position: absolute;
+	top:0px;
+	height:140px;
+	width:700px;
+	margin:auto;
+	left:50%;
+	margin-left: -350px;	
+}/**/
+/*#blackBox{
+	height:83.4px;
+	width:500px;
+	position: absolute;
+    top:17.7px; 
+	left: 0; 
+	right:0;
+    margin:0px auto;
+}/**/
+#redBox{
+	left:0px;
+	top:37px;
+	width:100%;
+	z-index:-1;
+	position:absolute;
+	height:30px;
+}
+.imgIcon1{
+	width:50px;
+	height:50px;
+	margin:15px;
+	z-index=0;
+}
+#blueBox{
+	float:right;
+	background-image:url("../Images/iconBox.jpg");
+	background-size:100% 100%;
+}
+#mainBody{
+	margin-top:0px;
+	clear:both;
+	
+}
+.cellCenter{
+	margin:15px;
+	margin-top:5px;
+	margin-bottom:5px; 
+	width:75px;
+	height:75px;
+}
+.cellCenter:hover{
+	margin:60px;
+	margin-top:0px;
+	margin-bottom:0px;
+	width:100px;
+	height:100px;
+}
+#imgCap{
+	display:block;
+	top:0px;
+	position:absolute;
+	width:179px;
+	float:left;
+	height:800px;
+	margin-bottom:5%;
+	background-image:url("../Images/capsuleBody.png");
+	background-size:100% 100%;
+}
+#spaceHolder1{
+	height:60px;
+}
+#spaceHolder2{
+	height:60px;
+}	
+#sideContent{
+	position:absoulte;
+	float:right;
+}
+.sideAd1{
+	margin:50px 0px;
+	/*margin-right:0;*/	
+	display:block;
+	background-image:url("../Images/tablet.png");
+	background-size:100% 100%;
+}
+.imgAd{
+	padding:18px 6px;
+}
+#relative{
+	
+}
+#contentHolder{
+	display:block;
+	width:60%;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+}
+#tabletBackDis{
+	background-image:url("../Images/tabletMiddle.jpg");
+	background-size: 100% 100%;
+	display:block;
+}
+#content{
+	margin-left:10%;
+	margin-right:10%;
+}
+.contentTab{
+	display:block;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	width:100%;
+	height:50px;
+}
+.contentText{
+}
+.contentSig{
+	width:200px;
+	height:100px;
+}
+#teamContent{
+}
+#teamHolder{
+	width:100%;
+	height:100%;
+    list-style-type: none;
+}
+li{
+	display:block;
+}
+.idPhotos{
+	margin:25px;
+	width:250px;
+	height:166px;
+}
+.idPhotos:hover{
+	width:300px;
+	height:200px;
+	margin:0px;
+}
+#tablet{
+	position:relative;
+	margin-top:5%;
+	margin-bottom:5%;
+	bottom:5%;
+}
+.gallery{
+	position:absolute;
+	margin-left:-400px;
+	margin-bottom:50px;
+	left:50%;
+	width:800px;
+	height:509.1px;
+	background-image:url("../Images/tablet.png");
+	background-size:100% 100%;
+}
+.tabletContent{
+	position:absolute;
+	top:46px;
+	left:46px;
+	width:710px;
+	height:418px;
+	opacity:0;
+	
+	-webkit-transition: all 1.5s ease-in-out;
+	-moz-transition: all 1.5s ease-in-out;
+	-ms-transition: all 1.5s ease-in-out;
+	-o-transition: all 1.5s ease-in-out;
+	transition: all 1.5s ease-in-out;
+}
+.visible{
+	opacity:1 !important;
+}
+#buttonLeft{
+	position:absolute;
+	top:470px;
+	left:50px;
+	width:50px;
+	height:20px;
+}
+#buttonRight{
+	position:absolute;
+	top:470px;
+	right:50px;
+	width:50px;
+	height:20px;
+}
+#splashScreen{
+	position:absolute;
+	top:40%;
+	right:10%;
+	height:auto;
+	width:20%;
+	background-color:red;
+	border:100px;
+	border-color:black;
+}
+.splashText{
+	text-align:center;
+}
+.collegeText{
+	font-family:Helvetica Neue;
+}
+#whiteBack{
+	position:fixed;
+	margin:0px;
+	top:0px;
+	left:0px;
+	width:100%;
+	z-index:1;
+	height:100%;
+	opacity:0;
+}
+.flash{
+	opacity:1 !important;
+	z-index:1 !important;
+	
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+.front{
+	z-index:1 !important;
+}
+.teamLarge{
+	opacity:0;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-top:-150px;
+	margin-left:-250px;
+	width:500px;
+	height:300px;
+}
+.whiteBackVisible{
+	opacity:0.7 !important;
+	z-index:1 !important; 
+}
+.clickAble{
+	opacity:1;
+	z-index:2;
+}
+.journalContent{
+	position:absolute;
+	top:46px;
+	left:756px;
+	width:710px;
+	height:418px;
+	opacity:0;
+	
+	-webkit-transition: all 1.5s ease-in-out;
+	-moz-transition: all 1.5s ease-in-out;
+	-ms-transition: all 1.5s ease-in-out;
+	-o-transition: all 1.5s ease-in-out;
+	transition: all 1.5s ease-in-out;
+}
+.pageTurn{
+	left:46px;
+	opacity:1 !important;
+	z-index;0;
+}
+h1{
+	text-align:center;
+}
+li{
+	display:inline;
+}
+area{
+	background-color:red;
+}
+body{
+    background-image: url("../Images/background.jpg");
+	background-size: 100% 4000px;
+}

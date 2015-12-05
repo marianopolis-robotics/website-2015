@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Game</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<link rel="stylesheet" type="text/css" href="../css/team.css">
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+		<script type="text/javascript">
+			//This deal with the site music
+			var boolSound;
+			var audio = new Audio('../miscFiles/siteMusic.mp3');
+			function MusicPlay(){
+				audio.play();
+			}
+			//boolSound = 1, sound off. boolSound = 0, sound on
+			function SoundToggle(){
+				if(1==boolSound){
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOn');
+					boolSound = 0;
+					audio.play();
+					//start the sound
+				}else{
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOff');
+					boolSound = 1;
+					audio.pause();
+					//end the sound
+				}
+			}
+
+			//The video appearing
+			function Video(){
+				whiteBack.classList.add('whiteBackVisible');
+				video.classList.add('videoVisible');
+			}
+			function NormalBack(){
+				whiteBack.classList.remove('whiteBackVisible');
+				video.classList.remove('videoVisible');
+			}
+
+
+
+			function Zoom(ID){
+				whiteBackTeam.classList.add('whiteBackVisible');
+				switch(ID){
+					case 0:
+						imgLarge0.classList.add('clickAble');
+						break;
+					case 1:
+						imgLarge1.classList.add('clickAble');
+						break;
+					case 2:
+						imgLarge2.classList.add('clickAble');
+						break;
+					case 3:
+						imgLarge3.classList.add('clickAble');
+						break;
+					case 4:
+						imgLarge4.classList.add('clickAble');
+						break;
+					case 5:
+						imgLarge5.classList.add('clickAble');
+						break;
+					case 6:
+						imgLarge6.classList.add('clickAble');
+						break;
+					case 7:
+						imgLarge7.classList.add('clickAble');
+						break;
+					case 8:
+						imgLarge8.classList.add('clickAble');
+						break;
+					case 9:
+						imgLarge9.classList.add('clickAble');
+						break;
+					case 10:
+						imgLarge10.classList.add('clickAble');
+						break;
+					case 11:
+						imgLarge11.classList.add('clickAble');
+						break;
+					case 12:
+						imgLarge12.classList.add('clickAble');
+						break;
+					case 13:
+						imgLarge13.classList.add('clickAble');
+						break;
+					case 14:
+						imgLarge14.classList.add('clickAble');
+						break;
+					case 15:
+						imgLarge15.classList.add('clickAble');
+						break;
+					case 16:
+						imgLarge16.classList.add('clickAble');
+						break;
+					case 17:
+						imgLarge17.classList.add('clickAble');
+						break;
+					case 18:
+						imgLarge18.classList.add('clickAble');
+						break;
+				}
+			}
+			function TeamNormal(){
+				whiteBackTeam.classList.remove('whiteBackVisible')
+				imgLarge0.classList.remove('clickAble');
+				imgLarge1.classList.remove('clickAble');
+				imgLarge2.classList.remove('clickAble');
+				imgLarge3.classList.remove('clickAble');
+				imgLarge4.classList.remove('clickAble');
+				imgLarge5.classList.remove('clickAble');
+				imgLarge6.classList.remove('clickAble');
+				imgLarge7.classList.remove('clickAble');
+				imgLarge8.classList.remove('clickAble');
+				imgLarge9.classList.remove('clickAble');
+				imgLarge10.classList.remove('clickAble');
+				imgLarge11.classList.remove('clickAble');
+				imgLarge12.classList.remove('clickAble');
+				imgLarge13.classList.remove('clickAble');
+				imgLarge14.classList.remove('clickAble');
+				imgLarge15.classList.remove('clickAble');
+				imgLarge16.classList.remove('clickAble');
+				imgLarge17.classList.remove('clickAble');
+				imgLarge18.classList.remove('clickAble');
+			}
+
+			var state = 0;
+			var myVar
+			function RotateTimer(){
+				myVar = setInterval(CycleText, 20000);
+			}
+			function CycleText(){
+				switch(state){
+					case 0:
+						text0.classList.add('hideText');
+						text1.classList.remove('hideText');
+						state=1;
+						break;
+					case 1:
+						text1.classList.add('hideText');
+						text2.classList.remove('hideText');
+						state=2;
+						break;
+					case 2:
+						text2.classList.add('hideText');
+						text3.classList.remove('hideText');
+						state=3;
+						break;
+					case 3:
+						text3.classList.add('hideText');
+						text0.classList.remove('hideText');
+						state=0;
+						break;
+				}
+			}
+		</script>
+	</head>
+	<body onload="RotateTimer()">
+		<div id="whiteBack" onclick="NormalBack()"/></div>
+		<div class="videoHolder">
+            <iframe id="video" src="https://www.youtube.com/embed/CYVlB6SmscQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+
+		<div id="whiteBackTeam" onclick="TeamNormal()" src="../Images/white.png"/></div>
+		<div id="imgLarge0" class="teamLarge" src="../Images/teamPhoto/ferlyFR.png"/></div>
+		<div id="imgLarge1" class="teamLarge" src="../Images/teamPhoto/amandaFR.png"/></div>
+		<div id="imgLarge2" class="teamLarge" src="../Images/teamPhoto/aidanFR.png"/></div>
+		<div id="imgLarge3" class="teamLarge" src="../Images/teamPhoto/alexFR.png"/></div>
+		<div id="imgLarge4" class="teamLarge" src="../Images/teamPhoto/allysonFR.png"/></div>
+		<div id="imgLarge5" class="teamLarge" src="../Images/teamPhoto/claudiaFR.png"/></div>
+		<div id="imgLarge6" class="teamLarge" src="../Images/teamPhoto/danielFR.png"/></div>
+		<div id="imgLarge7" class="teamLarge" src="../Images/teamPhoto/dineshFR.png"/></div>
+		<div id="imgLarge8" class="teamLarge" src="../Images/teamPhoto/ericFR.png"/></div>
+		<div id="imgLarge9" class="teamLarge" src="../Images/teamPhoto/erikFR.png"/></div>
+		<div id="imgLarge10" class="teamLarge" src="../Images/teamPhoto/fozailFR.png"/></div>
+		<div id="imgLarge11" class="teamLarge" src="../Images/teamPhoto/fredFR.png"/></div>
+		<div id="imgLarge12" class="teamLarge" src="../Images/teamPhoto/jennyFR.png"/></div>
+		<div id="imgLarge13" class="teamLarge" src="../Images/teamPhoto/kaitlinFR.png"/></div>
+		<div id="imgLarge14" class="teamLarge" src="../Images/teamPhoto/paulFR.png"/></div>
+		<div id="imgLarge15" class="teamLarge" src="../Images/teamPhoto/salyFR.png"/></div>
+		<div id="imgLarge16" class="teamLarge" src="../Images/teamPhoto/vanessaFR.png"/></div>
+		<div id="imgLarge17" class="teamLarge" src="../Images/teamPhoto/vincentFR.png"/></div>
+		<div id="imgLarge18" class="teamLarge" src="../Images/teamPhoto/sankeralliFR.png"/></div>
+
+		<div id="mainBody">
+			<div id="teamTitle">
+				<img class="spaceCadetsLogo" src="../Images/spacecadets.png" alt="Space Cadets" />
+				<img class="marianopolisLogo" src="../Images/mrobotics.png" alt="Marianopolis College" />
+			</div>
+			<div id="relative">
+				<div class='topRight'>
+					<div class='widget'>
+						<div class='bar speed'>speed</div>
+						<div class='bar drag'></div>
+						<div class='bar damage'>damage</div>
+					</div>
+				</div>
+                <div src="../Images/blueBox.png" class="tronBox" id="sideImage">
+					<p onclick="CycleText()" class="clickMe">L'Experiences des cadets</p>
+					<p id="text0" class="">La préparation pour la compétition n’a pas été facile. J’étais déjà habitué aux longues journées de travail à cause de expériences en robotique antérieures. C’était toujours difficile de se lever à chaque matin et de me rendre à l’école durant les vacances de Noël mais les problèmes difficiles rendaient le tout intéressant et palpitant! Même si c’était parfois difficile, j’avais toujours hâte de pouvoir continuer à travailler. Je travaillais sur l’ordinateur la plupart du temps en essayant de trouver des solutions à différent “bugs” avant les dates limites. L’équipe a eu beaucoup de difficulté à trouver un thème final et cela a causé un grand dégât. Nous avons fini par arriver a un accord mais nous étions déjà en retard. J’ai sacrifié plusieurs nuits afin d’accomplir toutes les tâches. Cependant l’équipe m’a beaucoup soutenu et c’est comme ça que je suis resté motivé jusqu’à la toute fin.
+						-Aidan Sullivan
+					</p>
+					<p id="text1" class="hideText">Comme ceci était ma première expérience comme membre de l’équipe de robotique, je n’avais aucune idée à quoi m’attendre. J’avais de l’intérêt pour les arts graphiques mais je n’y voyais pas l’utilité pour la construction d’un robot. Le premier jour de travail on nous a assigné différents travaux et j’ai réalisé que la compétition avait en fait beaucoup plus de composantes que je ne l’avais imaginé. J’ai énormément aimé le procès de conception du site web, surtout lorsque j’ai crée les modèles de base pour chaque page. La partie la plus difficile a été de trouver un équilibre entre un horaire scolaire très chargé et grande une charge de travail qui impliquait surtout l’utilisation de Photoshop. Je n’ai pas dormi plusieurs nuit afin de pouvoir finir à temps. Cependant l’équipe m’a toujours encouragé et m’a apporté son aide de toutes les façons possibles. Le tout a été une expérience très valorisante.
+						-Kaitlin Zhang
+					</p>
+					<p id="text2" class="hideText">Durant l’expérience que j’ai vécu avec l’équipe de robotique, j’ai appris à travailler rapidement avec des gens avec qui je n’ai jamais parlé auparavant. Ils m’ont appris plusieurs nouvelles techniques et de mots de vocabulaire qui me seront utiles dans diverses situation dans le future. J’ai aimé comment juste après quelques jours de travail, nous sommes devenus une équipe bien organisée. Même si nous avons investi beaucoup de notre temps durant les vacances de noël et avons passez beaucoup d’heures supplémentaires à l’école tard le soir, j’ai adoré mon expérience avec l’équipe de robotique du collège.  – Eric Yu
+					</p>
+					<p id="text3" class="hideText">Cette année a été une année pleine de défis pour l’équipe de robotique du collège Marianopolis. Étant co-capitaine d’une équipe est toujours une tâche stressante, surtout quand il y a beaucoup d’attentes face au travail. Notre équipe a eu tant d’idée pour la compétition d’Actimania qu’il a été très difficile de prendre des décisions, surtout quand est venue le temps de choisir le type de robot que nous voulions construire. Par contre, on a appris à utiliser nos talents et atteindre nos objectifs. Nous avons tous abandonner de nombreuses heures de sommeil, mais nous le faisons tous pour notre passion pour la robotique et notre désir d’excellé. – Ferly Galvez
+					</p>
+
+				</div>
+				<div class="tronBox" id="bottomRight">
+					<iframe class="earthFrame" src="../en/earth.html"></iframe>
+				</div>
+			</div>
+
+
+			<div id="content">
+				<div class="headerInsideContent"></div>
+                <div class="contentInContent noFooter" >
+					<div id="contentHolderMargin">
+						<div id="contentHolder">
+							<div class="mainContent top border"></div>
+							<div class="mainContent bot border"></div>
+
+							<div class="keepingPadding">
+								<div class="hoveringContentText">
+									<div class="shape"></div>
+									<div class="teamCenter">
+										<div class="teamIdHolder">
+											<div onclick="Zoom(0)" id="teamID0" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/ferlyId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 0" class="teamMember"></div>
+												<div class="teamName">
+													<p>Ferly</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(1)" id="teamID1" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/amandaId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 1" class="teamMember"></div>
+												<div class="teamName">
+													<p>Amanda</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(2)" id="teamID2" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/aidanId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 2" class="teamMember"></div>
+												<div class="teamName">
+													<p>Aidan</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(3)" id="teamID3" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/alexId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 3" class="teamMember"></div>
+												<div class="teamName">
+													<p>Alex</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(4)" id="teamID4" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/allysonId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 4" class="teamMember"></div>
+												<div class="teamName">
+													<p>Allyson</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(5)" id="teamID5" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/claudiaId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 5" class="teamMember"></div>
+												<div class="teamName">
+													<p>Claudia</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(6)" id="teamID6" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/danielId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 6" class="teamMember"></div>
+												<div class="teamName">
+													<p>Daniel</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(7)" id="teamID7" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/dineshId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 7" class="teamMember"></div>
+												<div class="teamName">
+													<p>Dinesh</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(8)" id="teamID8" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/ericId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 8" class="teamMember"></div>
+												<div class="teamName">
+													<p>Eric</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(9)" id="teamID9" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/erikId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 9" class="teamMember"></div>
+												<div class="teamName">
+													<p>Erik</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(10)" id="teamID10" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/fozailId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 10" class="teamMember"></div>
+												<div class="teamName">
+													<p>Fozail</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(11)" id="teamID11" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/fredId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 11" class="teamMember"></div>
+												<div class="teamName">
+													<p>Fred</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(12)" id="teamID12" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/jennyId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 12" class="teamMember"></div>
+												<div class="teamName">
+													<p>Jenny</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(13)" id="teamID13" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/kaitlinId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 13" class="teamMember"></div>
+												<div class="teamName">
+													<p>Kaitlin</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(14)" id="teamID14" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/paulId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 14" class="teamMember"></div>
+												<div class="teamName">
+													<p>Paul</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(15)" id="teamID15" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/sallyId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 15" class="teamMember"></div>
+												<div class="teamName">
+													<p>Sally</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(16)" id="teamID16" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/vanessaId.png" />
+												<div class="static"></div>
+												<div id="img class="mugShot" 16" class="teamMember"></div>
+												<div class="teamName">
+													<p>Vanessa</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(17)" id="teamID17" class="idPhotos"><img class="mugShot"  src="../Images/teamPhoto/vincentId.png" />
+												<div class="static"></div>
+												<div id="img17" class="teamMember"></div>
+												<div class="teamName">
+													<p>Vincent</p>
+												</div>
+											</div>
+										</div>
+
+										<div class="teamIdHolder">
+											<div onclick="Zoom(18)" id="teamID18" class="idPhotos"><img src="../Images/teamPhoto/sankeralliId.png" />
+												<div class="static"></div>
+												<div id="img18" class="teamMember"></div>
+												<div class="teamName">
+													<p>Sankeralli</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="sitemapHolder">
+				<div class="tronBox" id="topPart">
+					  <div class="sitemap icon"><a href="index1.html">Accueil</a></div>
+					  <div class="sitemap icon"><a href="robot.html">Robot</a></div>
+					  <div class="sitemap icon"><a href="game.html">Jeu</a></div>
+					  <div class="sitemap icon"><a href="team.html">&#201;quipe</a></div>
+					  <div class="sitemap icon"><a href="#" onclick="Video()">Documentaier</a></div>
+					  <div class="sitemap icon"><a href="journal.html">Journal</a></div>
+				</div>
+				<div class="socialMedia" >
+					<div class="sitemap icon"><a href="../en/team.html">English</a></div>
+					<div class="sitemap icon"><a href="college.html">Coll&#232;ge</a></div>
+					<div class="sitemap">
+						<div id="soundImage" onclick="SoundToggle()" class="soundIcon soundOff"></div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img width="50px" height="50px" src="../Images/facebook.png" alt="facebook" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://twitter.com/MariRobotics" ><img width="50px" height="50px" src="../Images/twitter.png" alt="twitter" /></a>
+							<div class="iconFiller"></div>
+						</div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img width="50px" height="50px" src="../Images/instagram.png" alt="instagram" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img width="50px" height="50px" src="../Images/youtube.png" alt="youtube" /></a>
+							<div class="iconFiller"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+    <script type="text/javascript" src="../js/objloader.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ship.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '3'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '3'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '3'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '3'
+          }}, function() {
+          // Finish callback
+        });
+      });
+</html>

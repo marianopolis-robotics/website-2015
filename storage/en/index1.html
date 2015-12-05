@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Home</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+		<script type="text/javascript">
+			var boolSound;
+			var audio = new Audio('../miscFiles/siteMusic.mp3');
+			function MusicPlay(){
+				audio.play();
+			}
+			function SoundToggle(){
+				if(1==boolSound){
+					soundImage.classList.add('soundOn');
+					soundImage.classList.remove('soundOff');
+					boolSound = 0;
+					audio.play();
+					//start the sound
+				}else{
+					soundImage.classList.add('soundOff');
+					soundImage.classList.remove('soundOn');
+					boolSound = 1;
+					audio.pause();
+					//end the sound
+				}
+			}
+			function Video(){
+				whiteBack.classList.add('whiteBackVisible');
+				video.classList.add('videoVisible');
+			}
+			function NormalBack(){
+				whiteBack.classList.remove('whiteBackVisible');
+				video.classList.remove('videoVisible');
+			}
+		</script>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+	</head>
+	<body onload="aMusicPlay()">
+	
+		<div id="whiteBack" onclick="NormalBack()" src="../Images/white.png"/></div>
+		<iframe id="video" width="420" height="315" src="https://www.youtube.com/embed/gy1B3agGNxw" frameborder="0" allowfullscreen></iframe>
+	
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img src="../Images/spacecadets.png" alt="Space Cadets" width="100%"/>
+            </div>
+			<div class="barSol">
+				<div id="relative">
+					<div class='topRight'>
+					  <a href="#"><div id="langTab" class="icon">Fran&ccedil;ais</div></a>
+					</div>
+					<div src="../Images/blueBox.png" id="sideImage"></div>
+					<div src="../Images/white.png" id="socialMedia"></div>
+				</div>
+			<div>
+
+			<div id="content">
+				<div class="headerInsideContent">	<!--pretty much a margin-->
+				</div>
+                <div class="contentInContent" >
+                  <div id="contentHolderMargin">
+                    <div id="contentHolder">
+                        <p class="contentText">Welcome to the website documenting Marianopolis&#39; Mission to Earth. </p>
+                        <p class="contentText">I am Dr. Nefario and I have led the select students of intergalactic Marianopolis throughout the past three months. Our mission is to travel to Earth and explore the unknowns of a nuclearly destroyed planet. </p>
+                        <p class="contentText">To prepare for this mission, the Cadets have designed and built a robot to explore areas toxic to humans, filmed a documentary that will be updated throughout the mission and a website to inform people like you about our efforts and built their very own space pod to travel in.</p>
+                        <p class="contentText">Please take your time while browsing this website and keep in mind the hard work the Cadets put into this mission.</p>
+                    </div>
+                  </div>
+
+                  <div id="insideFooter">
+					<h2 class='footerText'>Time Until Arrival to Earth</h2>
+                      <div class="countdown countdown-container container">
+                          <div class="clock row">
+                              <div class="clock-item clock-days countdown-time-value ">
+                                  <div class="wrap">
+                                      <div class="inner">
+                                          <div id="canvas-days" class="clock-canvas"></div>
+
+                                          <div class="text">
+                                              <p class="val">0</p>
+                                              <p class="type-days type-time">DAYS</p>
+                                          </div><!-- /.text -->
+                                      </div><!-- /.inner -->
+                                  </div><!-- /.wrap -->
+                              </div><!-- /.clock-item -->
+
+                              <div class="clock-item clock-hours countdown-time-value ">
+                                  <div class="wrap">
+                                      <div class="inner">
+                                          <div id="canvas-hours" class="clock-canvas"></div>
+
+                                          <div class="text">
+                                              <p class="val">0</p>
+                                              <p class="type-hours type-time">HOURS</p>
+                                          </div><!-- /.text -->
+                                      </div><!-- /.inner -->
+                                  </div><!-- /.wrap -->
+                              </div><!-- /.clock-item -->
+
+                              <div class="clock-item clock-minutes countdown-time-value ">
+                                  <div class="wrap">
+                                      <div class="inner">
+                                          <div id="canvas-minutes" class="clock-canvas"></div>
+
+                                          <div class="text">
+                                              <p class="val">0</p>
+                                              <p class="type-minutes type-time">MINUTES</p>
+                                          </div><!-- /.text -->
+                                      </div><!-- /.inner -->
+                                  </div><!-- /.wrap -->
+                              </div><!-- /.clock-item -->
+
+                              <div class="clock-item clock-seconds countdown-time-value">
+                                  <div class="wrap">
+                                      <div class="inner">
+                                          <div id="canvas-seconds" class="clock-canvas"></div>
+
+                                          <div class="text">
+                                              <p class="val">0</p>
+                                              <p class="type-seconds type-time">SECONDS</p>
+                                          </div><!-- /.text -->
+                                      </div><!-- /.inner -->
+                                  </div><!-- /.wrap -->
+                              </div><!-- /.clock-item -->
+                          </div><!-- /.clock -->
+                      </div><!-- /.countdown-wrapper -->
+
+                  </div>
+                </div>
+			</div>
+			<div class="barSol">
+				<div id="sitemapHolder">
+					<div class="iconHolder">
+					  <a href="index1.html"><div class="sitemap icon">Home</div></a>
+					  <a href="robot.html"><div class="sitemap icon">Robot</div></a>
+					  <a href="game.html"><div class="sitemap icon">Game</div></a>
+					  <a href="team.html"><div class="sitemap icon">Team</div></a>
+					  <a onclick="Video()"><div class="sitemap icon">Documentary</div></a>
+					  <a href="journal.html"><div class="sitemap icon">Mission Log</div></a>
+					  <a href="college.html"><div class="sitemap icon">College</div></a>
+					</div>
+					
+					<div class="socialMedia">
+						<a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img src="../Images/fb.png" alt="facebook" /></a>
+						<a class='socialIcon' href="https://twitter.com/MariRobotics" ><img src="../Images/twitter.png" alt="twitter" /></a>
+						<a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img src="../Images/instagram.png" alt="instagram" /></a>
+						<a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img src="../Images/youtube.png" alt="youtube" /></a>
+						<div onclick='SoundToggle()' id="soundImage" class="soundOn"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '6'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '6'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '6'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '6'
+          }}, function() {
+          // Finish callback
+        });
+      });
+    </script>
+
+</html>

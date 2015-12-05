@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Tutorial</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+		<script type="text/javascript">
+			//This deal with the site music
+			var boolSound;
+			var audio = new Audio('../miscFiles/siteMusic.mp3');
+			function MusicPlay(){
+				audio.play();
+			}
+			//boolSound = 1, sound off. boolSound = 0, sound on
+			function SoundToggle(){
+				if(1==boolSound){
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOn');
+					boolSound = 0;
+					audio.play();
+					//start the sound
+				}else{
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOff');
+					boolSound = 1;
+					audio.pause();
+					//end the sound
+				}
+			}
+			
+			//The video appearing
+			function Video(){
+				whiteBack.classList.add('whiteBackVisible');
+				video.classList.add('videoVisible');
+			}
+			function NormalBack(){
+				whiteBack.classList.remove('whiteBackVisible');
+				video.classList.remove('videoVisible');
+			}
+		</script>
+        
+	</head>
+	<body>
+		<div id="whiteBack" onclick="NormalBack()"/></div>
+		<div class="videoHolder">
+		<iframe id="video" src="https://www.youtube.com/embed/CYVlB6SmscQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img class="spaceCadetsLogo" src="../Images/spacecadets.png" alt="Space Cadets" />
+              <img class="marianopolisLogo" src="../Images/mrobotics.png" alt="Marianopolis College" />
+            </div>
+			<div id="relative">
+                <div class='topRight'>
+                  <div class='widget'>
+                    <div class='bar speed'>speed</div>
+                    <div class='bar drag'></div>
+                    <div class='bar damage'>damage</div>
+                  </div>
+                </div>
+				<div src="../Images/blueBox.png" class="tronBox" id="sideImage">
+                  <div class="keepingPadding panoramaContainer">
+                    <div class="insidePanorama">
+                      <img class="firstPanorama panorama" src="../Images/journal/DSC_6033.png" />
+                      <img class="secondPanorama panorama" src="../Images/journal/DSC_6563.png" />
+                    </div>
+                  </div>
+                </div>
+				<div class="tronBox" id="bottomRight">
+                  <iframe class="earthFrame" src="../en/earth.html"></iframe>
+                </div>
+			</div>
+
+			<div id="content">
+				<div class="headerInsideContent"></div>
+                <div class="contentInContent noFooter">
+					<div id="contentHolderMargin">
+						<div id="contentHolder">
+							<div class="mainContent top border"></div>
+							<div class="mainContent bot border"></div>
+
+							<div class="keepingPadding">
+								<div class="hoveringContentText">
+									<div class="shape"></div>
+										<h2 class="contentText">Tutorial: Introduction to PID</h2>
+										<img class="contentImage" src="../Images/tutorial.jpg"/>
+										<p class="contentText">We will be using Vex parts and EasyC V4 for Cortex in this tutorial.  EasyC V4 for Cortex has a built-in PID Control function block.  </p>
+										<p class="contentText">In order to set up PID control, you will need a Vex integrated motor encoder (IME).  What is an IME?  The Vex IME is an add-on for your Vex motors.  You can follow Vex instructions to install an IME onto your Vex motors.  Without an IME, you are programming your robot to turn a motor a certain number of clicks (rotation units).  With a programmed IME, you can make your motor complete a specific number of rotations or keep something held at a certain angle. </p>
+										<p class="contentText">What is PID control?  It stands for Proportional-Integral-Derivative.  You may not know some of these words if you haven&#39;t done Calculus; you do not have to worry, because we will come up with easy-to-understand explanations for all of these.  P.I.D. control is a “control algorithm” which controls what a motor is doing by making small adjustments thanks to information that the encoder is inputting.  </p>
+										<p class="contentText">Proportional: the proportional part is what gets your motor going to your target.  You might go over your target (or under your target), but at least you are around where you want to be. Think of a driver trying to get her car to a speed of 50 kilometers per hour: it doesn&#39;t matter too much if she&#39;s travelling at 48, 49, 51 or 52 so long as the car is around its target. </p>
+										<p class="contentText">Integral: the integral part takes into account how “far away” under your target speed your motor is rotating and tries to adjust for the difference.  For example, if you were lifting something up thanks to a motor but gravity was pulling it down and making the motor&#39;s job more difficult, the P.I.D. control would make the motor spin faster.  </p>
+										<p class="contentText">Derivative: the derivative part tries to avoid making the motor go over the target.  It thinks about what is going to happen using how quickly the motor is speeding up as determined by the proportional part.   </p>
+										<p class="contentText"> We hope you found this introduction to PID control helpful.  PID control can be very helpful and is widely used in industrial production as well as in robots.  </p>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+					
+			<div id="sitemapHolder">
+				<div class="tronBox" id="topPart">
+					  <div class="sitemap icon"><a href="index1.html">Home</a></div>
+					  <div class="sitemap icon"><a href="robot.html">Robot</a></div>
+					  <div class="sitemap icon"><a href="game.html">Game</a></div>
+					  <div class="sitemap icon"><a href="team.html">Team</a></div>
+					  <div class="sitemap icon"><a href="#" onclick="Video()">Documentary</a></div>
+					  <div class="sitemap icon"><a href="journal.html">Mission Log</a></div>
+				</div>
+				<div class="socialMedia" >
+					<div class="sitemap icon"><a href="../fr/tutorial.html">Fran&ccedil;ais</a></div>
+					<div class="sitemap icon"><a href="college.html">College</a></div>
+					<div class="sitemap">
+						<div id="soundImage" onclick="SoundToggle()" class="soundIcon soundOff"></div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img width="50px" height="50px" src="../Images/facebook.png" alt="facebook" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://twitter.com/MariRobotics" ><img width="50px" height="50px" src="../Images/twitter.png" alt="twitter" /></a>
+							<div class="iconFiller"></div>
+						</div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img width="50px" height="50px" src="../Images/instagram.png" alt="instagram" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img width="50px" height="50px" src="../Images/youtube.png" alt="youtube" /></a>
+							<div class="iconFiller"></div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+    <script type="text/javascript" src="../js/objloader.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ship.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '3'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '3'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '3'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '3'
+          }}, function() {
+          // Finish callback
+        });
+      });
+</html>

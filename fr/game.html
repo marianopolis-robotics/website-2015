@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Game</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<link rel="stylesheet" type="text/css" href="../css/game.css">
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+		<script type="text/javascript">
+			//This deal with the site music
+			var boolSound;
+			var audio = new Audio('../miscFiles/siteMusic.mp3');
+			function MusicPlay(){
+				audio.play();
+			}
+			//boolSound = 1, sound off. boolSound = 0, sound on
+			function SoundToggle(){
+				if(1==boolSound){
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOn');
+					boolSound = 0;
+					audio.play();
+					//start the sound
+				}else{
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOff');
+					boolSound = 1;
+					audio.pause();
+					//end the sound
+				}
+			}
+
+			//The video appearing
+			function Video(){
+				whiteBack.classList.add('whiteBackVisible');
+				video.classList.add('videoVisible');
+			}
+			function NormalBack(){
+				whiteBack.classList.remove('whiteBackVisible');
+				video.classList.remove('videoVisible');
+			}
+
+
+
+
+            $(document).ready(function(){
+              leftInc = 0;
+              pictures = ['https://c4.staticflickr.com/8/7281/16251508659_ef270fc356_k.jpg', 'https://c1.staticflickr.com/9/8679/16251723557_0b3cab7bf4_k.jpg', 'https://c4.staticflickr.com/8/7428/16251102769_5695ade511_k.jpg', 'https://c4.staticflickr.com/8/7345/15814974714_8050ef9995_k.jpg'];
+              current = 1;
+              window.setInterval(function(){
+                leftInc -= 1;
+                bool =  (-leftInc + $('.panoramaContainer').width() - 12.0 - $('.panoramaContainer').width() >= $('.firstPanorama').width());
+
+                if (bool){
+                  current = (current + 1)% pictures.length;
+                  secondSrc  = $('.secondPanorama').attr('src');
+                  leftInc = 0;
+                  $('.panorama').css({left: 0}, 1);
+                  $('.firstPanorama').attr('src', secondSrc);
+                  $('.secondPanorama').attr('src', pictures[current]);
+                }else{
+                  $('.panorama').css({left: leftInc+"px"}, 249, 'linear');
+                }
+              }, 25);
+            });
+		</script>
+
+	</head>
+	<body>
+		<div id="whiteBack" onclick="NormalBack()"/></div>
+		<div class="videoHolder">
+		<iframe id="video" src="https://www.youtube.com/embed/CYVlB6SmscQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img class="spaceCadetsLogo" src="../Images/spacecadets.png" alt="Space Cadets" />
+              <img class="marianopolisLogo" src="../Images/mrobotics.png" alt="Marianopolis College" />
+            </div>
+			<div id="relative">
+                <div class='topRight'>
+                  <div class='widget'>
+                    <div class='bar speed'>speed</div>
+                    <div class='bar drag'></div>
+                    <div class='bar damage'>damage</div>
+                  </div>
+                </div>
+				<div src="../Images/blueBox.png" class="tronBox" id="sideImage">
+                  <div class="keepingPadding panoramaContainer">
+                    <div class="insidePanorama">
+                      <img class="firstPanorama panorama" src="https://c4.staticflickr.com/8/7281/16251508659_ef270fc356_k.jpg" />
+                      <img class="secondPanorama panorama" src="https://c1.staticflickr.com/9/8679/16251723557_0b3cab7bf4_k.jpg" />
+                    </div>
+                  </div>
+                </div>
+				<div class="tronBox" id="bottomRight">
+                  <iframe class="earthFrame" src="../en/earth.html"></iframe>
+                </div>
+			</div>
+
+			<div id="content">
+				<div class="headerInsideContent"></div>
+                <div class="contentInContent" >
+					<div id="contentHolderMargin">
+						<div id="contentHolder">
+							<div class="mainContent top border"></div>
+							<div class="mainContent bot border"></div>
+
+							<div class="keepingPadding">
+                              <div class="hoveringContentText">
+									<div class="shape"></div>
+
+									<h1 class="contentText">Actimania 2015</h1>
+									<p><a href="tutorial.html">Tutoriel: Introduction au PID</a></p>
+									<p class="contentText">Durant la compétition Actimania 2015, l’objectif principal de chacun des robots participants sera de mettre les balles dans certaines cibles aux couleurs de leur équipe. Les couleurs des cibles peuvent être changées par l’activation d’interrupteurs. </p>
+									<p class="contentText">Durant les rondes préliminaires, il y aura au total 6 robot sur le terrain de jeu, trois formant l’équipe des jaunes et trois formant l’équipe des bleus. Durant les cinq minutes de jeu de la ronde éliminatoire, seulement cinq robots seront sur le terrain, formant deux équipes, une de trois robots et une de deux robots. </p>
+									<p class="contentText">Les robots doivent marquer le plus de points possible pour leur équipe durant la partie. Il y aura un total de 32 balles sur le terrain. Marquez un point dans la plus petite cible vaut 10 points, 20 points seront accordé pour les balles misent dans la cible moyenne et 40 points seront accordés pour la plus haute cible. Marquer un point dans une cible de la couleur de l’adversaire leur alloue les points. </p>
+									<p class="contentText">Il se peut qu’il y ait collaboration entre les écoles afin the maximiser les points. Dans les minutes de jeu, il se peut que nous adoption une stratégie offensive ou défensive, dépendant de la situation. Dans le dernier cas, un robot devra peut-être se concentrer sur bloquer les cibles ou encore empêcher les autres robots de l’équipe adverse d’approcher les cibles. D’une autre part, certains robots pourrait avoir plus de facilité à marquer dans des cibles plus basses mais plus rapidement. Dans ces cas-là, les autres membres de l’équipe doivent cette fois-ci se concentrer sur les cibles les plus hautes. Si parfois, plusieurs cibles sont allumées de la couleur de notre équipe, le but sera alors de marquer le plus de points le plus rapidement possible. </p>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="insideFooter">
+					<h2 class='footerText'>Animation de jeu</h2>
+					<div id='galleryOverflow'>
+                        <iframe width="560" height="200" src="https://www.youtube.com/embed/X2KPVj53-yI?rel=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+
+			<div id="sitemapHolder">
+				<div class="tronBox" id="topPart">
+					  <div class="sitemap icon"><a href="index1.html">Accueil</a></div>
+					  <div class="sitemap icon"><a href="robot.html">Robot</a></div>
+					  <div class="sitemap icon"><a href="game.html">Jeu</a></div>
+					  <div class="sitemap icon"><a href="team.html">&#201;quipe</a></div>
+					  <div class="sitemap icon"><a href="#" onclick="Video()">Documentaire</a></div>
+					  <div class="sitemap icon"><a href="journal.html">Journal</a></div>
+				</div>
+				<div class="socialMedia" >
+					<div class="sitemap icon"><a href="../en/game.html">English</a></div>
+					<div class="sitemap icon"><a href="college.html">Coll&#232;ge</a></div>
+					<div class="sitemap">
+						<div id="soundImage" onclick="SoundToggle()" class="soundIcon soundOff"></div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img width="50px" height="50px" src="../Images/facebook.png" alt="facebook" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://twitter.com/MariRobotics" ><img width="50px" height="50px" src="../Images/twitter.png" alt="twitter" /></a>
+							<div class="iconFiller"></div>
+						</div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img width="50px" height="50px" src="../Images/instagram.png" alt="instagram" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img width="50px" height="50px" src="../Images/youtube.png" alt="youtube" /></a>
+							<div class="iconFiller"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+    <script type="text/javascript" src="../js/objloader.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ship.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '3'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '3'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '3'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '3'
+          }}, function() {
+          // Finish callback
+        });
+      });
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Tutorial</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+		<script type="text/javascript">
+			//This deal with the site music
+			var boolSound;
+			var audio = new Audio('../miscFiles/siteMusic.mp3');
+			function MusicPlay(){
+				audio.play();
+			}
+			//boolSound = 1, sound off. boolSound = 0, sound on
+			function SoundToggle(){
+				if(1==boolSound){
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOn');
+					boolSound = 0;
+					audio.play();
+					//start the sound
+				}else{
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOff');
+					boolSound = 1;
+					audio.pause();
+					//end the sound
+				}
+			}
+			
+			//The video appearing
+			function Video(){
+				whiteBack.classList.add('whiteBackVisible');
+				video.classList.add('videoVisible');
+			}
+			function NormalBack(){
+				whiteBack.classList.remove('whiteBackVisible');
+				video.classList.remove('videoVisible');
+			}
+		</script>
+        
+	</head>
+	<body>
+		<div id="whiteBack" onclick="NormalBack()"/></div>
+		<div class="videoHolder">
+		<iframe id="video" src="https://www.youtube.com/embed/CYVlB6SmscQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img class="spaceCadetsLogo" src="../Images/spacecadets.png" alt="Space Cadets" />
+              <img class="marianopolisLogo" src="../Images/mrobotics.png" alt="Marianopolis College" />
+            </div>
+			<div id="relative">
+                <div class='topRight'>
+                  <div class='widget'>
+                    <div class='bar speed'>speed</div>
+                    <div class='bar drag'></div>
+                    <div class='bar damage'>damage</div>
+                  </div>
+                </div>
+				<div src="../Images/blueBox.png" class="tronBox" id="sideImage">
+                  <div class="keepingPadding panoramaContainer">
+                    <div class="insidePanorama">
+                      <img class="firstPanorama panorama" src="../Images/journal/DSC_6033.png" />
+                      <img class="secondPanorama panorama" src="../Images/journal/DSC_6563.png" />
+                    </div>
+                  </div>
+                </div>
+				<div class="tronBox" id="bottomRight">
+                  <iframe class="earthFrame" src="../en/earth.html"></iframe>
+                </div>
+			</div>
+
+			<div id="content">
+				<div class="headerInsideContent"></div>
+                <div class="contentInContent noFooter">
+					<div id="contentHolderMargin">
+						<div id="contentHolder">
+							<div class="mainContent top border"></div>
+							<div class="mainContent bot border"></div>
+
+							<div class="keepingPadding">
+								<div class="hoveringContentText">
+									<div class="shape"></div>
+										<h2 class="contentText">Tutorial: PID (Pour les Vex Motor Encoders)</h2>
+										<img class="contentImage" src="../Images/tutorial.jpg"/>
+										<p class="contentText">Nous allons utiliser du mat&#233;riel Vex et le language EasyC V4 pour le Cortex dans ce didacticiel/tutoriel. EasyC V4 pour le Cortex a un Contr&#244;le PID int&#233;gr&#233; avec diff&#233;rentes fonctions. </p>
+										<p class="contentText">Afin de pr&#233;parer le controle DIP, vous aurez besoin d&#8217;un encodeur de moteur int&#233;gr&#233; Vex. Quesqu&#8217;un EMI? Un EMI est une ajout qu&#8217;on peut int&#233;grer  aux moteurs Vex (269 ou 393). Vous pouves suivre les instructions de Vex pour installer un EMI sur vos moteurs. Sans un IME, vous aller programmer un robot pour tourner grace &#224; une certaine puissance &#233;lectrique pendant une p&#233;riode de temps d&#233;termin&#233;e. Avec un EMI programm&#233;, vous pouvez faire que votre moteur compl&#232;te un nombre sp&#233;cifique de rotations ou maintenir quelque chose &#224; un angle d&#233;termin&#233;. </p>
+										<p class="contentText">Quesqu&#8217;un controle DIP? L&#8217;acronyme signifie D&#233;riv&#233;-Integral-Proportionnel. Il se peut que vous ne connaissiez pas certains de ses mots si vous n&#8217;avez pas pris de cours de Calcul mais ne vous inqui&#233;tez pas, car nous allons l&#8217;expliquer en termes simples. Le controleur DIP est un &#8220;algorithme de controle&#8221; qui commande ce qu&#8217;un moteur fait en faisaint de petits ajustements grace &#224; l&#8217;information fournie par un encodeur.</p>
+										<p class="contentText">Proportionel: la partie proportionelle est ce qui m&#232;ne le moteur &#224; la cible. Il se peut que vous n&#8217;attegniez pas la cible mais ce sera autour de l&#8217;endroit que vous d&#233;sirez. Pensez &#224; un conducteur qui veut rouler &#224; 50 km/h: il n&#8217;y a aucune diff&#233;rence si il se d&#233;place &#224; 48, 49, 51 ou 52 km/h tant qu&#8217;il est autour de sa vitesse cible.  </p>
+										<p class="contentText">Integrale: la partie int&#233;grale prend en consid&#233;ration la diff&#233;rence entre la vitesse du moteur et la vitesse cible et essaie d&#8217;ajuster la diff&#233;rence. Par exemple, si on essaie de soulever un objet &#224; l&#8217;aide d&#8217;un moteur mais que la force gravitationnelle tire en sens inverse cela rend la t&#226;che du moteur plus difficile. Le controle D.I.P ferait que le moteur tourne plus vite.  </p>
+										<p class="contentText">D&#233;riv&#233;: la partie du d&#233;riv&#233; maintient la vitesse cible et emp&#234;che que le moteur tourne plus vite que celle-ci. Cela permet au system de devancer le moteur selon la vitesse &#224; laquelle il tourne, vitesse qui est d&#233;termin&#233;e par la partie proportionelle.    </p>
+								</div>		
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+					
+			<div id="sitemapHolder">
+				<div class="tronBox" id="topPart">
+					  <div class="sitemap icon"><a href="index1.html">Acceuil</a></div>
+					  <div class="sitemap icon"><a href="robot.html">Robot</a></div>
+					  <div class="sitemap icon"><a href="game.html">Jeux</a></div>
+					  <div class="sitemap icon"><a href="team.html">&#201;quipe</a></div>
+					  <div class="sitemap icon"><a href="#" onclick="Video()">Documentaire</a></div>
+					  <div class="sitemap icon"><a href="journal.html">Journal</a></div>
+				</div>
+				<div class="socialMedia" >
+					<div class="sitemap icon"><a href="../en/tutorial.html">English</a></div>
+					<div class="sitemap icon"><a href="college.html">Coll&#232;ge</a></div>
+					<div class="sitemap">
+						<div id="soundImage" onclick="SoundToggle()" class="soundIcon soundOff"></div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img width="50px" height="50px" src="../Images/facebook.png" alt="facebook" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://twitter.com/MariRobotics" ><img width="50px" height="50px" src="../Images/twitter.png" alt="twitter" /></a>
+							<div class="iconFiller"></div>
+						</div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img width="50px" height="50px" src="../Images/instagram.png" alt="instagram" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img width="50px" height="50px" src="../Images/youtube.png" alt="youtube" /></a>
+							<div class="iconFiller"></div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+    <script type="text/javascript" src="../js/objloader.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ship.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '3'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '3'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '3'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '3'
+          }}, function() {
+          // Finish callback
+        });
+      });
+</html>

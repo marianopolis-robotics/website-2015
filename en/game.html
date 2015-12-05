@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Game</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+		<script type="text/javascript">
+			//This deal with the site music
+			var boolSound;
+			var audio = new Audio('../miscFiles/siteMusic.mp3');
+			function MusicPlay(){
+				audio.play();
+			}
+			//boolSound = 1, sound off. boolSound = 0, sound on
+			function SoundToggle(){
+				if(1==boolSound){
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOn');
+					boolSound = 0;
+					audio.play();
+					//start the sound
+				}else{
+					soundImage.classList.remove('soundOn');
+					soundImage.classList.remove('soundOff');
+					soundImage.classList.add('soundOff');
+					boolSound = 1;
+					audio.pause();
+					//end the sound
+				}
+			}
+
+			//The video appearing
+			function Video(){
+				whiteBack.classList.add('whiteBackVisible');
+				video.classList.add('videoVisible');
+			}
+			function NormalBack(){
+				whiteBack.classList.remove('whiteBackVisible');
+				video.classList.remove('videoVisible');
+			}
+
+
+
+
+            $(document).ready(function(){
+              leftInc = 0;
+              pictures = ['', '', ''];
+              current = 1;
+              window.setInterval(function(){
+                leftInc -= 1;
+                bool =  (-leftInc + $('.panoramaContainer').width() - 12.0 - $('.panoramaContainer').width() >= $('.firstPanorama').width());
+
+                if (bool){
+                  current = (current + 1)% pictures.length;
+                  secondSrc  = $('.secondPanorama').attr('src');
+                  leftInc = 0;
+                  $('.panorama').css({left: 0}, 1);
+                  $('.firstPanorama').attr('src', secondSrc);
+                  $('.secondPanorama').attr('src', pictures[current]);
+                }else{
+                  $('.panorama').css({left: leftInc+"px"}, 249, 'linear');
+                }
+              }, 25);
+            });
+		</script>
+
+	</head>
+	<body>
+		<div id="whiteBack" onclick="NormalBack()"/></div>
+		<div class="videoHolder">
+		<iframe id="video" src="https://www.youtube.com/embed/CYVlB6SmscQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img class="spaceCadetsLogo" src="../Images/spacecadets.png" alt="Space Cadets" />
+              <img class="marianopolisLogo" src="../Images/mrobotics.png" alt="Marianopolis College" />
+            </div>
+			<div id="relative">
+                <div class='topRight'>
+                  <div class='widget'>
+                    <div class='bar speed'>speed</div>
+                    <div class='bar drag'></div>
+                    <div class='bar damage'>damage</div>
+                  </div>
+                </div>
+				<div src="../Images/blueBox.png" class="tronBox" id="sideImage">
+                  <div class="keepingPadding panoramaContainer">
+                    <div class="insidePanorama">
+                      <img class="firstPanorama panorama" src="../Images/journal/DSC_6033.png" />
+                      <img class="secondPanorama panorama" src="../Images/journal/DSC_6563.png" />
+                    </div>
+                  </div>
+                </div>
+				<div class="tronBox" id="bottomRight">
+                  <iframe class="earthFrame" src="../en/earth.html"></iframe>
+                </div>
+			</div>
+
+			<div id="content">
+				<div class="headerInsideContent"></div>
+                <div class="contentInContent" >
+					<div id="contentHolderMargin">
+						<div id="contentHolder">
+							<div class="mainContent top border"></div>
+							<div class="mainContent bot border"></div>
+
+							<div class="keepingPadding">
+								<div class="hoveringContentText">
+									<div class="shape"></div>
+
+
+									<h1 class="contentText">Actimania 2015</h1>
+									<p><a href="tutorial.html">Tutorial: Introduction to PID</a></p>
+									<p class="contentText">During Actimania 2015, the main goal of each participating robot will be to pass balls through certain hoops that match its team&#39;s colors. Activating corresponding switches on the playing field can change these hoops&#39; colors. </p>
+									<p class="contentText">During the preliminary heats, there will be 6 robots on the playing field, three forming the Yellow Team and three forming the Blue Team. During the five&#45;minute playoffs, a total of five robots will be on the field per heat to form both teams. </p>
+									<p class="contentText">Robots must score as many points as possible for their team during the game. There will be a total of 32 balls on the playing field. Scoring a ball in the lowest hoop awards 10 points, 20 points if it&#39;s in the middle hoop and 40 points for the highest hoop. Scoring into the hoop with the opposite team&#39;s color will award points to the opposite team.</p>
+									<p class="contentText">We may have to cooperate with other schools&#39; members to maximize the scores. In the heat of the match, it might become necessary to play defense instead of opting for an offensive approach. In that case, one robot of the team might have to focus on blocking the hoops or preventing other robots from the opposite team from approaching the targets and entrust the scoring to its teammates. In another instance, some robots might score at lower levels much more efficiently than higher levels. In such a case, other members can focus on higher hoops and entrust the lowest one to that robot. Also, if multiple hoops are lit up on the field, it is necessary for all members to focus on scoring as quickly as possible. The ultimate goal is to pass as many balls through the hoops as possible. </p>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="insideFooter">
+					<h2 class='footerText'>Game Animation</h2>
+					<div id='galleryOverflow'>
+                        <iframe width="560" height="200" src="https://www.youtube.com/embed/X2KPVj53-yI?rel=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+
+			<div id="sitemapHolder">
+				<div class="tronBox" id="topPart">
+					  <div class="sitemap icon"><a href="index1.html">Home</a></div>
+					  <div class="sitemap icon"><a href="robot.html">Robot</a></div>
+					  <div class="sitemap icon"><a href="game.html">Game</a></div>
+					  <div class="sitemap icon"><a href="team.html">Team</a></div>
+					  <div class="sitemap icon"><a href="#" onclick="Video()">Documentary</a></div>
+					  <div class="sitemap icon"><a href="journal.html">Mission Log</a></div>
+				</div>
+				<div class="socialMedia" >
+					<div class="sitemap icon"><a href="../fr/game.html">Fran&ccedil;ais</a></div>
+					<div class="sitemap icon"><a href="college.html">College</a></div>
+					<div class="sitemap">
+						<div id="soundImage" onclick="SoundToggle()" class="soundIcon soundOff"></div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img width="50px" height="50px" src="../Images/facebook.png" alt="facebook" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://twitter.com/MariRobotics" ><img width="50px" height="50px" src="../Images/twitter.png" alt="twitter" /></a>
+							<div class="iconFiller"></div>
+						</div>
+						<div class="bunch">
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img width="50px" height="50px" src="../Images/instagram.png" alt="instagram" /></a>
+							<div class="iconFiller"></div>
+							<a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img width="50px" height="50px" src="../Images/youtube.png" alt="youtube" /></a>
+							<div class="iconFiller"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+    <script type="text/javascript" src="../js/objloader.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ship.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '3'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '3'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '3'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '3'
+          }}, function() {
+          // Finish callback
+        });
+      });
+</html>

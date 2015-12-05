@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Marianopolis Robotics Home</title>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+		<link rel="stylesheet" type="text/css" href="../css/robot.css">
+
+		<link rel="shortcut icon" href="../Images/robot.ico">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/clock.css">
+        <script type="text/javascript">
+
+
+          //This deal with the site music
+          var boolSound;
+          var audio = new Audio('../miscFiles/siteMusic.mp3');
+          function MusicPlay(){
+              audio.play();
+          }
+
+          function SoundToggle(){
+              if(1==boolSound){
+                  soundImage.classList.remove('soundOn');
+                  soundImage.classList.remove('soundOff');
+                  soundImage.classList.add('soundOn');
+                  boolSound = 0;
+                  audio.play();
+                  //start the sound
+              }else{
+                  soundImage.classList.remove('soundOn');
+                  soundImage.classList.remove('soundOff');
+                  soundImage.classList.add('soundOff');
+                  boolSound = 1;
+                  audio.pause();
+                  //end the sound
+              }
+          }
+
+          //The video appearing
+          function Video(){
+              whiteBack.classList.add('whiteBackVisible');
+              video.classList.add('videoVisible');
+          }
+
+          function NormalBack(){
+              whiteBack.classList.remove('whiteBackVisible');
+              video.classList.remove('videoVisible');
+          }
+
+          var enlarged = 0;
+          function Enlarge(imgID){
+              if(enlarged==0){
+                  galleryOverflow.classList.add('galleryOverflowCancel');
+
+                  img0.classList.remove('galleryThumb');
+                  img0.classList.add('galleryFull');
+                  img1.classList.remove('galleryThumb');
+                  img1.classList.add('galleryFull');
+                  img2.classList.remove('galleryThumb');
+                  img2.classList.add('galleryFull');
+                  img3.classList.remove('galleryThumb');
+                  img3.classList.add('galleryFull');
+                  img4.classList.remove('galleryThumb');
+                  img4.classList.add('galleryFull');
+
+                  enlarged=1;
+                  switch (imgID){
+                      case 0:
+                          img0.classList.add('galleryVisible');
+                          break;
+                      case 1:
+                          img1.classList.add('galleryVisible');
+                          break;
+                      case 2:
+                          img2.classList.add('galleryVisible');
+                          break;
+                      case 3:
+                          img3.classList.add('galleryVisible');
+                          break;
+                      case 4:
+                          img4.classList.add('galleryVisible');
+                          break;
+                  }
+              }else{
+                  enlarged=0;
+                  galleryOverflow.classList.remove('galleryOverflowCancel');
+
+                  img0.classList.add('galleryThumb');
+                  img0.classList.remove('galleryFull');
+                  img0.classList.remove('galleryVisible');
+                  img1.classList.add('galleryThumb');
+                  img1.classList.remove('galleryFull');
+                  img1.classList.remove('galleryVisible');
+                  img2.classList.add('galleryThumb');
+                  img2.classList.remove('galleryFull');
+                  img2.classList.remove('galleryVisible');
+                  img3.classList.add('galleryThumb');
+                  img3.classList.remove('galleryFull');
+                  img3.classList.remove('galleryVisible');
+                  img4.classList.add('galleryThumb');
+                  img4.classList.remove('galleryFull');
+                  img4.classList.remove('galleryVisible');
+              }
+          }
+
+
+
+        </script>
+	</head>
+	<body onload="aMusicPlay()">
+		<div id="whiteBack" onclick="NormalBack()"/></div>
+		<div class="videoHolder">
+            <iframe id="video" src="https://www.youtube.com/embed/CYVlB6SmscQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div id="mainBody">
+			<div id="teamTitle">
+              <img class="spaceCadetsLogo" src="../Images/spacecadets.png" alt="Space Cadets" />
+              <img class="marianopolisLogo" src="../Images/mrobotics.png" alt="Marianopolis College" />
+            </div>
+			<div id="relative">
+                <div class='topRight'>
+                  <div class='widget'>
+                    <div class='bar speed'>speed</div>
+                    <div class='bar drag'></div>
+                    <div class='bar damage'>damage</div>
+                  </div>
+                </div>
+				<div class="tronBox" id="sideImage">
+                  <div class="keepingPadding panoramaContainer">
+                    <div class="insidePanorama">
+                      <img class="firstPanorama panorama" src="http://c4.staticflickr.com/8/7424/15809319173_3b9475ada5_k.jpg" />
+                      <img class="secondPanorama panorama" src="http://c4.staticflickr.com/8/7424/15809319173_3b9475ada5_k.jpg" />
+                    </div>
+                  </div>
+                </div>
+				<div class="tronBox" id="bottomRight">
+                  <iframe class="earthFrame" src="../en/earth.html">
+                  </iframe>
+                </div>
+			</div>
+
+			<div id="content">
+				<div class="headerInsideContent">
+				</div>
+                <div class="contentInContent" >
+                  <div id="contentHolderMargin">
+                    <div id="contentHolder">
+                        <div class="mainContent top border"></div>
+                        <div class="mainContent bot border"></div>
+
+                        <div class="keepingPadding">
+                          <div class="hoveringContentText">
+
+                            <div class="shape"></div>
+                            <h1 class="contentText sandy">Sandy</h1>
+                            <h2 class="contentText">Design</h2>
+                            <h3 class="contentText">STRUCTURE</h3>
+                            <p class="contentText">Ch&#226;ssis: 1&#8221;X1&#8221; Extrusion 80-20 en aluminium et 1-1/4x1-&#188; tube carr&#233; en aluminium avec une &#233;paisseur de &#8539;&#8221;</p>
+                            <p class="contentText">Roues: 4 roues grises AndyMark de 6&#8221; pouces</p>
+                            <h3 class="contentText">COMPOSANTS &#201;ELECTRIQUES</h3>
+                            <p class="contentText">Moteurs: 2 moteurs Banebots avec un ratio de 20:1 avec une cha&#238;ne de r&#233;duction de 3,5:1.
+                              Deux moteurs de l&#232;ve-glace et deux moteurs de perceuses Makita</p>
+                            <p class="contentText">Batteries: Batterie Vex de 7.2 V et 2 batteries pour perceuse</p>
+                            <h3 class="contentText">LOGISTIQUE</h3>
+                            <p class="contentText">Processeur: Cerveau microcontr&#244;leur de Vex</p>
+                            <p class="contentText">Programme: RobotC</p>
+                            <p class="contentText">Manette de contr&#244;le: manette VEXnet</p>
+                            <div class="sitemap icon tutorial"><a href="tutorial.html">Tutorial</a></div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+				<div id="insideFooter">
+					<h2 class='footerText'>Gallery</h2>
+					<div id='galleryOverflow'>
+                      <div class="galleryThumbContainer">
+                        <img onclick="Enlarge(0);" id='img0' class="galleryThumb" src="https://c1.staticflickr.com/9/8649/16250944329_17c14cedf9_k.jpg"/>
+                      </div>
+                      <div class="filler"></div>
+                      <div class="galleryThumbContainer">
+                        <img onclick="Enlarge(1);" id='img1' class="galleryThumb" src="https://c4.staticflickr.com/8/7321/15814675144_c88a256137_k.jpg"/>
+                      </div>
+                      <div class="filler"></div>
+                      <div class="galleryThumbContainer">
+                        <img onclick="Enlarge(2);" id='img2' class="galleryThumb" src="https://c1.staticflickr.com/9/8651/16249781650_c8f77bd53c_k.jpg"/>
+                      </div>
+                      <div class="filler"></div>
+                      <div class="galleryThumbContainer">
+                        <img onclick="Enlarge(3);" id='img3' class="galleryThumb" src="https://c1.staticflickr.com/9/8590/16251283317_8ea13087ed_k.jpg"/>
+                      </div>
+                      <div class="filler"></div>
+                      <div class="galleryThumbContainer">
+                        <img onclick="Enlarge(4);" id='img4' class="galleryThumb" src="https://c4.staticflickr.com/8/7391/16251302257_0ab5b3b29e_k.jpg"/>
+                      </div>
+					</div>
+                </div>
+			</div>
+			<div id="sitemapHolder">
+                <div class="tronBox" id="topPart">
+                  <div class="sitemap icon"><a href="index1.html">Accueil</a></div>
+                  <div class="sitemap icon"><a href="robot.html">Robot</a></div>
+                  <div class="sitemap icon"><a href="game.html">Jeu</a></div>
+                  <div class="sitemap icon"><a href="team.html">&#201;quipe</a></div>
+                  <div class="sitemap icon"><a href="#" onclick="Video()">Documentaire</a></div>
+                  <div class="sitemap icon"><a href="journal.html">Journal</a></div>
+                </div>
+                <br/> <!-- temporary -->
+                <div class="socialMedia" >
+                  <div class="sitemap icon"><a href="../en/robot.html">English</a></div>
+                  <div class="sitemap icon"><a href="college.html">Coll&#232;ge</a></div>
+                  <div class="sitemap">
+					<div id="soundImage" onclick="SoundToggle()" class="soundIcon soundOff"></div>
+                    <div class="bunch">
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="https://www.facebook.com/crcteam006" ><img width="50px" height="50px" src="../Images/facebook.png" alt="facebook" /></a>
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="https://twitter.com/MariRobotics" ><img width="50px" height="50px" src="../Images/twitter.png" alt="twitter" /></a>
+                      <div class="iconFiller"></div>
+                    </div>
+                    <div class="bunch">
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="http://instagram.com/marianopolis.robotics/" ><img width="50px" height="50px" src="../Images/instagram.png" alt="instagram" /></a>
+                      <div class="iconFiller"></div>
+                      <a class='socialIcon' href="https://www.youtube.com/channel/UCvQLs4To1FbGwwaL3YcAi8w" ><img width="50px" height="50px" src="../Images/youtube.png" alt="youtube" /></a>
+                      <div class="iconFiller"></div>
+                    </div>
+                  </div>
+                </div>
+			</div>
+		</div>
+	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+    <script type="text/javascript" src="../js/objloader.js"></script>
+    <script type="text/javascript" src="../js/kinetic.js"></script>
+    <script type="text/javascript" src="../js/jquery.final-countdown.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/ship.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.countdown').final_countdown({
+          'start': 1362139200,
+          'end': 1388461320,
+          'now': 1387461319,
+
+          /*
+          'selectors': {
+              'value_seconds': '.clock-seconds .val',
+              'canvas_seconds': 'canvas_seconds',
+              'value_minutes': '.clock-minutes .val',
+              'canvas_minutes': 'canvas_minutes',
+              'value_hours': '.clock-hours .val',
+              'canvas_hours': 'canvas_hours',
+              'value_days': '.clock-days .val',
+              'canvas_days': 'canvas_days'
+          },
+          */
+          'seconds': {
+              'borderColor': '#7995D5',
+              'borderWidth': '3'
+          },
+          'minutes': {
+              'borderColor': '#ACC742',
+              'borderWidth': '3'
+          },
+          'hours': {
+              'borderColor': '#ECEFCB',
+              'borderWidth': '3'
+          },
+          'days': {
+              'borderColor': '#FF9900',
+              'borderWidth': '3'
+          }}, function() {
+          // Finish callback
+        });
+      });
+
+
+    </script>
+
+</html>

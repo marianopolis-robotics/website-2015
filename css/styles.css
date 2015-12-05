@@ -1,0 +1,901 @@
+#teamTitle{
+	z-index: 1;
+	height: 10%;
+    width: 42%;
+	position:absolute;
+	left:0;
+	top:0;
+	background-color: rgb(8, 21, 49);
+	background-size:100% 100%;
+}
+
+.widget {
+  position: absolute;
+}
+
+#teamTitle img{
+    width: 100%;
+	display: block;
+}
+
+.panorama {
+	height: 100%;
+	display: inline-block;
+	margin-left: 5px;
+	display: inline-block;
+	position: relative;
+}
+
+.imageSlider {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	position: absolute;
+	bottom: 0;
+}
+
+.panoramaContainer {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.insidePanorama {
+  width: 20002%;
+  height: 100%;
+}
+
+
+.hoveringContentText {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.keepingPadding {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.spaceCadetsLogo {
+	opacity: 0.8;
+    height: 78%;
+}
+
+.bar {
+  height: 15px;
+  width: 200px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  opacity: 0.7;
+  background-color: transparent !important;
+  font-family: myFirstFont;
+}
+.speed {
+  color: green;
+  background-color: green;
+  -webkit-box-shadow: 0 0 2px 2px green;
+  box-shadow: 0 0 2px 2px green;
+}
+.drag {
+  background-color: yellow;
+  -webkit-box-shadow: 0 0 2px 2px yellow;
+  box-shadow: 0 0 2px 2px yellow;
+  color: yellow;
+}
+.damage {
+  color: red;
+  background-color: red;
+  -webkit-box-shadow: 0 0 2px 2px red;
+  box-shadow: 0 0 2px 2px red;
+}
+
+.topRight{
+    height: 9.3%;
+}
+
+.shape {
+  width: 50px;
+  height: 60px;
+  float: left;
+  /* shape-outside: polygon(nonzero, 0px 0px, 0px 50px, 50px, 50px); */
+  shape-outside: polygon(0px 0px, 100% 0px, 0px 100%);
+  position: relative;
+}
+
+#langTab{
+	width:300px;
+	height:40px;
+	display:block;
+	color:green;
+	text-align:center;
+    position:relative;
+    left: -20px;
+}
+
+#mainBody{
+	width:100%;
+	margin-top:0px;
+	clear:both;
+}
+
+#sitemapHolder{
+	position:fixed;
+	bottom:0;
+	left:0;
+    width: 25%;
+	min-width: 240px;
+    height: 90.7%;
+}
+
+.icon {
+	background-image:url(../Images/icons.png);
+	background-size:100% 100%;
+	color:green;
+	text-align:center;
+	font-size:200%;
+}
+
+.icon a{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.socialMedia{
+	padding: 21px;
+    width: calc(100% + 0px);
+	color: white;
+	background-color: rgb(8, 21, 49);
+
+	/* border stuff */
+	border-image-source: url('../Images/borders/left.png');
+	border-image-slice: 72 41 52 69;
+	border-image-width: 18 10.25 13 17.25;
+	border-image-outset: 0px;
+	border-image-repeat: stretch stretch;
+	box-sizing: border-box;
+
+	overflow: auto;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    /* src: url('../fonts/orbitron-black.otf'); */
+    src: url('../fonts/orbitron-light.otf');
+}
+
+.sitemap {
+    font-family: myFirstFont;
+}
+
+.sitemap{
+	width:100%;
+	height:100%;
+	margin:0px;
+	margin-bottom:10px;
+	display:block;
+	position:relative;
+}
+
+.sitemap a:hover{
+  text-decoration: none;
+}
+
+.sitemap:last-of-type {
+	margin-bottom: 0;
+}
+
+.icon:hover{
+	background-image:url(../Images/icons_hover.png);
+}
+
+.sitemapList{
+	float:left;
+	position:relative;
+	float:bottom;
+}
+
+#relative{
+	position:absolute;
+	right:0;
+    width: 25%;
+    height: 100%;
+}
+
+#sideImage{
+	width:100%;
+	height:60%;
+	clear:both;
+	background-color:blue;
+	background-size:100% auto;
+}
+
+.bunch{
+	position: relative;
+	height: 55px;
+	display: table;
+    width: calc(100% - 100px);
+}
+
+#bottomRight {
+	display:block;
+	width:100%;
+	height:220px;
+	clear:both;
+	background-color:white;
+	background-size:100% auto;
+}
+
+#content{
+	width:50%;
+    height:100%;
+	position:absolute;
+	margin:auto;
+	background-color:rgb(8, 21, 49);
+	background-size:100% auto;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.headerInsideContent{
+  width: 100%;
+  height: 9.3%;
+}
+
+.socialIcon{
+  display: table-cell;
+  width: 55px;
+  height: 55px;
+  position: relative;
+  margin: auto;
+}
+.socialIcon img:hover{
+    width: 55px;
+    height: 55px;
+    margin: auto;
+}
+.socialIcon img{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+}
+
+#contentHolder{
+	padding: 30px;
+    height: 100%;
+    width: calc(100% + 0px);
+	color: white;
+
+	/* border stuff */
+	border-image-source: url('../Images/borders/mid.png');
+	border-image-slice: 113 61 66 86;
+	border-image-width: 113px 61px 66px 86px;
+	border-image-outset: 0px;
+	border-image-repeat: stretch stretch;
+	box-sizing: border-box;
+
+	overflow: auto;
+}
+.mainContent.top.border {
+  background-image: url('../Images/borders/topPatch.png');
+  width: 64px;
+  height: 113px;
+
+  left: 57%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+}
+.mainContent.bot.border {
+  background-image: url('../Images/borders/botMidPatch.png');
+  width: 169px;
+  height: 66px;
+
+  left: 14%;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+}
+
+
+#sideImage{
+    padding: 23px 27px 19px 36px;
+    width: 100%;
+	color: white;
+
+	/* border stuff */
+	border-image-source: url('../Images/borders/topRight.png');
+	border-image-slice: 51 43 172 87;
+	border-image-width: 51px 43px 172px 87px;
+	border-image-outset: 0px;
+	border-image-repeat: stretch stretch;
+	box-sizing: border-box;
+
+	overflow: auto;
+}
+
+.mesh{
+  width: 80%;
+  height: 40%;
+  top:0px;
+  right:-50px;
+  position: absolute;
+  z-index: 1002;
+  opacity: 1.0;
+}
+
+.marianopolisLogo{
+  margin-top: -2.6%;
+  opacity: 0.2;
+}
+
+.sitemapFiller{
+  height: 5%;
+}
+
+
+.clock{
+  width: 100%;
+  height: 60%;
+  position: relative;
+  top: 40%;
+}
+
+
+#sitemapHolder #topPart{
+	padding: 21px;
+    width: calc(100% + 0px);
+	color: white;
+
+	/* border stuff */
+	border-image-source: url('../Images/borders/left.png');
+	border-image-slice: 72 41 52 69;
+	border-image-width: 18 10.25 13 17.25;
+	border-image-outset: 0px;
+	border-image-repeat: stretch stretch;
+	box-sizing: border-box;
+
+	overflow: auto;
+}
+
+#bottomRight {
+	padding: 30px;
+    width: calc(100% + 0px);
+	color: white;
+
+	/* border stuff */
+	border-image-source: url('../Images/borders/botRight.png');
+	border-image-slice: 33 82 28 81;
+	border-image-width: 16.5 42 14 40.5;
+	border-image-outset: 0px;
+	border-image-repeat: stretch stretch;
+	box-sizing: border-box;
+
+	overflow: auto;
+}
+
+
+.tronBox {
+  background-color: rgb(8, 21, 49) !important;
+
+  /*
+  -webkit-box-shadow: 0 0 20px rgba(255,255,255,.6), inset 20 20 20px rgba(255,255,255,1);
+  -moz-box-shadow: 0 0 20px rgba(255,255,255,.6), inset 20 20 20px rgba(255,255,255,1);
+  box-shadow: 0 0 20px rgba(255,255,255,.6), inset 20 20 20px rgba(255,255,255,1);
+  */
+}
+
+.border {
+  background-size: cover;
+  position: absolute;
+}
+.top {
+  top: 0;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+.bot {
+  bottom: 0;
+}
+.top, .bot{
+  /*right: 0;*/
+}
+.left, .right {
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#contentHolderMargin {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+	margin: 0;
+
+	padding: 0px;
+    overflow: hidden;
+}
+
+.contentText{
+}
+
+.contentInContent {
+  top: 20%;
+  height: 80%;
+  width: 100%;
+}
+
+.contentSig{
+	width:200px;
+	height:100px;
+}
+
+#footer{
+	width:100%;
+	height:30%;
+	position:fixed;
+    bottom:0;
+	margin-top:50px;
+	background-color:green;
+    left: 0;
+}
+
+/* using `html body` instead of `body` because there is another css files which is giving it a gray background .*/
+html body{
+	background-color: rgba(8,21,49, 1.0);
+	background-size:100% 100%;
+    margin: 0;
+}
+
+#insideFooter {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background-color: rgb(8, 21, 49);
+    left: 0; right: 0; bottom: 0;
+    margin: auto;
+}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.earthFrame {
+	width: 100%;
+	height: 95%;
+	border: 0;
+	margin-top: 10px;
+}
+
+.shipTitleContainer {
+	position: absolute;
+	height: 40%;
+	width: 100%;
+    text-align: center;
+}
+
+.shipTitleRelative {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.shipTitle {
+    font-family: myFirstFont;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 87px;
+    width: 230px;
+    font-size: 2em;
+    color: #4FC4C9;
+}
+
+.arrival {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  color: #4FC4C9;
+}
+
+.earth {
+	width: 100px;
+	height: 100px;
+	background: url(http://www.noirextreme.com/digital/Earth-Color4096.jpg);
+	border-radius: 50%;
+	background-size: 210px;
+	box-shadow: inset 16px 0 40px 6px rgb(0, 0, 0),
+		inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
+	-webkit-animation-name: rotate;
+	-webkit-animation-duration: 4s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from { background-position-x: 0px; }
+  to { background-position-x: 210px; }
+}
+
+.imageSliderContainer {
+	height: 100%;
+	width: 100%;
+}
+
+/*Splash page*/
+.langSelect{
+	text-align:center;
+	display:inline;
+	position:absolute;
+	height:300px;
+	width:500px;
+	right:10%;
+	top:0;
+	bottom:0;
+	margin:auto;
+	background-image:url(../Images/border.png);
+	background-size:100% 100%;
+}
+.langSelect p{
+}
+.iconSplash{
+	margin-left:50px;
+	margin-right:50px;
+	height: 50px;
+	display:block;
+	margin-top:50px;
+}
+.splash{
+	background-image:url(../Images/background.png);
+	background-size:100% 100%;
+}
+
+
+.noFooter{
+	height:100% !important;
+}
+.noFooter #contentHolderMargin{
+	height:80% !important;
+}
+/*Sound Icon, mute/unmute*/
+.soundOn{
+	background-image:url(../Images/sound.png);
+}
+.soundOff{
+	background-image:url(../Images/mute.png);
+}
+.soundIcon{
+	background-size:100% 100%;
+	width:100px;
+	height:100px;
+	float:right;
+}
+
+/*The video, click on documentary*/
+#whiteBack{
+	position:fixed;
+	margin:0px;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	opacity:0.7;
+	z-index:10;
+	display:none;
+	background-image:url(../Images/stars.jpg);
+}
+.whiteBackVisible{
+	display:inline !important;
+}
+#video{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	margin:auto;
+	right:0;
+	z-index:11;
+	display:none;
+	width:0;
+	height:0;
+
+}
+.videoVisible{
+	width:420px !important;
+	height:315px !important;
+	display:inline !important;
+
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+.videoHolder{}
+
+/*gallery and the footer*/
+#footer{
+	width:100%;
+	height:30%;
+	position:fixed;
+    bottom:0;
+	margin-top:50px;
+    left: 0;
+}
+.footerText{
+	text-align:center;
+	font:bold;
+    color: #428bca;
+}
+#insideFooter {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    margin: 0 auto;
+    left: 0; right: 0; bottom: 0;
+    margin: auto;
+}
+#galleryOverflow{
+	overflow-y: auto;
+	height:60%;
+	text-align:center;
+    display: table;
+    width: 100%;
+}
+.galleryHolder{
+	position:relative;
+	margin:0px auto;
+	display: inline-block;
+	height:90%;
+}
+.galleryOverflowCancel{
+	overflow-y: visible !important;
+}
+.galleryThumbContainer {
+	width:100px;
+	height:50px;
+	opacity:1;
+    display: table-cell;
+    position: relative;
+}
+.galleryThumb{
+	width:100px;
+	height:50px;
+	position: absolute;
+	opacity:1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.galleryThumb:hover{
+    margin: 0;
+    height: 65px;
+}
+
+.galleryFull{
+	position: fixed;
+	left: 0;
+	right: 0;
+	width: 80%;
+	height: 80%;
+	opacity: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+	margin: auto;
+}
+
+.galleryVisible{
+	opacity:1 !important;
+}
+.galleryOverflow iframe{
+	position:absoulte;
+	top:0px;
+}
+
+/*college*/
+.collegeContent p{
+	display:inline;
+}
+.collegeContent img{
+	width:200px;
+	height:auto;
+	display:inline;
+}
+
+/*team page*/
+#whiteBackTeam{
+	position:fixed;
+	margin:0px;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	opacity:0;
+	z-index:-10;
+	background-image:url(../Images/stars.jpg);
+	/*background-size:;*/
+}
+.idPhotos{
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+}
+
+
+
+
+
+/*
+ * **
+ *
+ *
+ *
+ *
+ *
+ */
+
+
+
+
+
+
+
+.teamMember{
+	background-size: 100% 100%;
+	height: 100%;
+	width: 100%;
+}
+.teamName{
+	text-align:center;
+	height:20%;
+	width:100%;
+	background-color:white;
+}
+.teamName p{
+	margin-top:10px;
+	color:red;
+	display:inline-block;
+}
+.idPhotos:hover{
+	width:100%;
+	height:100%;
+	margin:0%;
+}
+.idPhotos:hover .static{
+	background-image:url(../Images/static.gif);
+	background-size:100% 100%;
+	width:100%;
+	height:100%;
+	position:absolute;
+	opacity:0.5;
+	z-index:2;
+}
+.teamIdHolder{
+	display:inline-block;
+	width:200px;
+	height:300px;
+    padding: 5px;
+	position: relative;
+}
+.teamIdHolder:hover {
+    padding: 0;
+g
+/*
+.teamHolder2{
+	width: inherit;
+	height: inherit;
+}*/
+.teamCenter{
+	text-align:center;
+}
+.clickAble{
+	opacity:1 !important;
+	z-index:10 !important;
+}
+.teamLarge{
+	opacity:0;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-top:-150px;
+	margin-left:-250px;
+	width:500px;
+	height:300px;
+	background-color:red;
+	background-size:100% 100%;
+}
+.teamLarge img{
+	margin:20px;
+	width: 75px;
+	height: 100px;
+	display:inline;
+}
+.teamLarge p{
+	display:inline;
+
+}
+.hideText{
+	display:none !important;
+}
+.clickMe{
+	background-color:red;
+}
+.clickMe:hover{
+	background-color:green;
+}
+
+/*Journal page*/
+.journalPages{
+	width:100%;
+	height:80%;
+	display:none;
+	position:relative;
+}
+.journalVisible{
+	display:inline !important;
+}
+.contentImage{
+	width:100%;
+}
+.timeline{
+	width:100%;
+	height:60px;
+	text-align:center;
+}
+.arrow{
+	position:relative;
+	background-size: 100% 100%;
+	margin:auto;
+	width:50px;
+	height:50px;
+	display:inline-block;
+}
+.otherDays{
+	position:relative;
+	margin:0px auto;
+	background-image:url(../Images/greenBox.png);
+	background-size: 100% 100%;
+	display:inline-block;
+	height:50px;
+	width:50px;
+}
+.days{
+	width:70%;
+	height:50px;
+	text-align:center;
+	display:inline-block;
+	overflow-x:auto;
+}
+.arrowLeft{
+	background-image:url(../Images/blackBox.png);
+}
+.arrowRight{
+	background-image:url(../Images/blackBox.png);
+}
+.journalFiller{
+	width:70%;
+	height:50px;
+	background-image:url(../Images/red.png);
+	background-size: 100% 100%;
+	display:inline-block;
+}

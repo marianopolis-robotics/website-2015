@@ -1,0 +1,87 @@
+.back {
+  background-image: url("../Images/grid6.png");
+  background-size: 1000px 1000px;
+  opacity: 0.08;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+body{
+  background-color: rgb(8, 21, 49);
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.french {
+  width: 200px;
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 50px;
+  position: absolute;
+  background-image:url(../Images/icons.png);
+  background-size:100% 100%;
+  font-family: myFirstFont;
+	text-align:center;
+	font-size:200%;
+  line-height: 1.7;
+}
+
+.french a, .english a{
+  text-decoration: none;
+  color: rgb(121, 225, 228);
+}
+.french a:hover, .english a:hover{
+  text-decoration: none;
+  color: blue;
+}
+.english {
+  line-height: 1.7;
+  width: 200px;
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 50px;
+  position: absolute;
+  background-image:url(../Images/icons.png);
+  background-size:100% 100%;
+  font-family: myFirstFont;
+	text-align:center;
+	font-size:200%;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    /* src: url('../fonts/orbitron-black.otf'); */
+    src: url('../fonts/orbitron-light.otf');
+}
+
+.title{
+  width: 60%;
+  height: 10%;
+  position: fixed;
+  top: -125px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+img{
+    width: 100%;
+	display: block;
+}
